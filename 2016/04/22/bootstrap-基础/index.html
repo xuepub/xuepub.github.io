@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Bootstrap 基础 | xuepub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="推荐阅读Bootstrap 官方中文文档 http:&#x2F;&#x2F;v3.bootcss.com&#x2F; W3school 相关文档 http:&#x2F;&#x2F;w3schools.bootcss.com&#x2F;bootstrap&#x2F; 《Bootstrap实战》 中文版   有效文件bootstrap&#x2F; ├── css&#x2F; │ └── bootstrap.min.css ├── js&#x2F; │ └─── bootstrap.min.js ├─">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap 基础">
+<meta property="og:url" content="http://example.com/2016/04/22/bootstrap-%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="xuepub">
+<meta property="og:description" content="推荐阅读Bootstrap 官方中文文档 http:&#x2F;&#x2F;v3.bootcss.com&#x2F; W3school 相关文档 http:&#x2F;&#x2F;w3schools.bootcss.com&#x2F;bootstrap&#x2F; 《Bootstrap实战》 中文版   有效文件bootstrap&#x2F; ├── css&#x2F; │ └── bootstrap.min.css ├── js&#x2F; │ └─── bootstrap.min.js ├─">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-04-21T23:26:34.000Z">
+<meta property="article:modified_time" content="2021-11-17T23:45:06.388Z">
+<meta property="article:author" content="szzz">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="xuepub" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">xuepub</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-bootstrap-基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/22/bootstrap-%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2016-04-21T23:26:34.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bootstrap 基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p>Bootstrap 官方中文文档 <a target="_blank" rel="noopener" href="http://v3.bootcss.com/">http://v3.bootcss.com/</a> W3school 相关文档 <a target="_blank" rel="noopener" href="http://w3schools.bootcss.com/bootstrap">http://w3schools.bootcss.com/bootstrap/</a> 《Bootstrap实战》 中文版  </p>
+<h2 id="有效文件"><a href="#有效文件" class="headerlink" title="有效文件"></a>有效文件</h2><p>bootstrap/ ├── css/ │ └── bootstrap.min.css ├── js/ │ └─── bootstrap.min.js ├── fonts/  </p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>在 <head> 中导入 bootstrap.min.css，注意在自定义 CSS 文件之前； 在 <body> 结束部分引入  bootstrap.min.js，注意在引入 jquery.min.js 文件之后； 可以考虑使用 CDN 公共库。  </p>
+<h2 id="提供功能"><a href="#提供功能" class="headerlink" title="提供功能"></a>提供功能</h2><ul>
+<li>  各浏览器 reset</li>
+<li>  移动优先 responsive design</li>
+<li>  栅格系统</li>
+<li>  导航栏</li>
+<li>  表格和表单样式</li>
+<li>  模态框</li>
+<li>  标签页</li>
+<li>  图片轮播</li>
+<li>  响应式图片</li>
+</ul>
+<p> </p>
+<h2 id="相关组件"><a href="#相关组件" class="headerlink" title="相关组件"></a>相关组件</h2><ul>
+<li>  jQuery（必须使用）</li>
+<li>  jQuery UI</li>
+<li>  Font Awesome 图标</li>
+</ul>
+<p> </p>
+<h2 id="使用要点"><a href="#使用要点" class="headerlink" title="使用要点"></a>使用要点</h2><p><strong>移动优先</strong> 必须使用 Bootstrap 要求的三行 <meta> 以支持各种设备。   ** js 文件后置引入** 据称在 <body>  的结束部分引入 js 文件能够优化网页加载速度，提升动画效果，业界普遍使用。 注意这种情况下 DOM 事件的写法，比如无法直接在 HTML 的 button 标签中使用 onclick 事件。   <strong>顶部导航 nav</strong> 格式需按 Bootstrap 文档来。 移动端导航通过下拉式菜单弹出，其位置在 div.navbar-header&gt;button.navbar-toggle.collapsed，注意 button 中 data-target 属性值为 #main-nav，main-nav 为正常界面下主菜单的 id 值，要保证 Bootstrap 的 js 文件和其依赖的 jQuery 文件正常引用。 二级菜单的写法类似移动端下拉式菜单。   <strong>响应式  responsive</strong> <strong>1. container</strong> 所有网站上的内容，都放到 <div class="container"></div> 中，这样页面宽度自动支持响应式设计：</p>
+<ul>
+<li>  lg 大屏幕 x &gt;1200px，1170px container 宽度</li>
+<li>  md 中屏幕 992px &lt; x &lt; 1200px，970px container 宽度</li>
+<li>  sm 小屏幕 768px &lt; x &lt; 992px，750px container 宽度</li>
+<li>  xs 手机屏幕  x &lt; 768px ，auto container 宽度</li>
+</ul>
+<p><strong>2. 显示/隐藏元素</strong> 在class中加入 hidden-xs、hidden-sm、hidden-md、hidden-lg，可分别在不同尺寸页面下隐藏不同元素，其相反作用使用 visible 前缀 <strong>3. row</strong> 当 div 中有多列子块时，使用栅格系统，当栅格列之和 &gt;=12 时，移动浏览器可能产生右侧页面移动的 bug，请小心使用：</p>
+<div class="row">
+  <div class="col-md-6 col-xs-12"></div>
+  <div class="col-md-6 col-xs-12"></div>
+</div>
+
+<p>  （待续）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2016/04/22/bootstrap-%E5%9F%BA%E7%A1%80/" data-id="ckw469lfg001qacuzf94k50sh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/25/mysql-%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MySQL 基础
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/15/python-%E7%88%AC%E8%99%AB%E7%AE%80%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python 爬虫简述</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/back-end/">back-end</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/back-end/%E5%BC%80%E5%8F%91/">开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/back-end/%E8%BF%90%E7%BB%B4/">运维</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BA%94%E7%94%A8/">应用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Agile/" rel="tag">Agile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/" rel="tag">Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordPress/" rel="tag">WordPress</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Agile/" style="font-size: 13.33px;">Agile</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/PHP/" style="font-size: 13.33px;">PHP</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/WordPress/" style="font-size: 16.67px;">WordPress</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/02/angularjs-%E5%AE%9E%E8%B7%B5%E5%BF%83%E5%BE%97/">AngularJS 实践心得</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/24/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E7%AE%80%E8%BF%B0/">用户故事简述</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/20/docker-%E5%9F%BA%E7%A1%80/">Docker 基础</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/17/ionic-%E7%AE%80%E8%BF%B0/">Ionic 简述</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/15/angularjs-1-%E5%AD%A6%E4%B9%A0/">AngularJS 1 学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016-2021 szzz<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
