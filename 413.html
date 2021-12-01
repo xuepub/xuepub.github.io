@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+                        <link rel="pingback" href="http://www.xuepub.com/xmlrpc.php">
+        
+        <title>Spring Boot 基础 &#8211; 学吧</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; Feed" href="http://www.xuepub.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; 评论Feed" href="http://www.xuepub.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; Spring Boot 基础评论Feed" href="http://www.xuepub.com/413.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.xuepub.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css'  href="crayon.min.css-ver=_2.7.2_beta.css" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-github-css'  href="github.css-ver=_2.7.2_beta.css" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/themes/github/github.css?ver=_2.7.2_beta" type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-consolas-css'  href="consolas.css-ver=_2.7.2_beta.css" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/fonts/consolas.css?ver=_2.7.2_beta" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-1-css'  href="css-family=Poiret+One&ver=0.0.16.css" tppabs="http://fonts.googleapis.com/css?family=Poiret+One&ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-2-css'  href="css-family=Raleway-400,100,200,300,500,600,700,800,900&ver=0.0.16.css" tppabs="http://fonts.googleapis.com/css?family=Raleway%3A400%2C100%2C200%2C300%2C500%2C600%2C700%2C800%2C900&ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-3-css'  href="css-family=Open+Sans-300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese&ver=0.0.16.css" tppabs="http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C600%2C700%2C800%2C300&subset=latin%2Ccyrillic-ext%2Clatin-ext%2Ccyrillic%2Cgreek-ext%2Cgreek%2Cvietnamese&ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-icons-css'  href="mythemes-icons.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/css/mythemes-icons.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-effects-css'  href="effects.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/effects.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-header-css'  href="header.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/header.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-materialize-css'  href="materialize.min.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/materialize.min.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-typography-css'  href="typography.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/typography.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-navigation-css'  href="navigation.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/navigation.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-nav-css'  href="nav.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/nav.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-blog-css'  href="blog.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/blog.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-forms-css'  href="forms.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/forms.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-elements-css'  href="elements.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/elements.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-widgets-css'  href="widgets.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/widgets.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-css'  href="comments.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/comments.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-typography-css'  href="comments-typography.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/comments-typography.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-footer-css'  href="footer.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/footer.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-pretty-photo-css'  href="prettyPhoto.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/prettyPhoto.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-plugins-css'  href="plugins.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/plugins.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-style-css'  href="style.css-ver=4.7.3.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/style.css?ver=4.7.3" type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='materialize-ie-css'  href="ie.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/ie.css?ver=0.0.16" type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='tablepress-default-css'  href="default.min.css-ver=1.8.1.css" tppabs="http://www.xuepub.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.8.1" type='text/css' media='all' />
+<script type='text/javascript' src="jquery.js-ver=1.12.4.js" tppabs="http://www.xuepub.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type='text/javascript' src="jquery-migrate.min.js-ver=1.4.1.js" tppabs="http://www.xuepub.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.xuepub.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="crayon.min.js-ver=_2.7.2_beta.js" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src="respond.min.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/respond.min.js?ver=0.0.16"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src="html5shiv.min.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/html5shiv.min.js?ver=0.0.16"></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='http://www.xuepub.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.xuepub.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.xuepub.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='使用 IntelliJ IDEA 开发 Spring Web' href='http://www.xuepub.com/344.html' />
+<link rel='next' title='Java Web 技术趋势' href='http://www.xuepub.com/439.html' />
+<meta name="generator" content="WordPress 4.7.3" />
+<link rel="canonical" href="http://www.xuepub.com/413.html" />
+<link rel='shortlink' href='http://www.xuepub.com/?p=413' />
+<link rel="alternate" type="application/json+oembed" href="http://www.xuepub.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.xuepub.com%2F413.html" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.xuepub.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.xuepub.com%2F413.html&#038;format=xml" />
+<!--[if IE]>
+	<style type="text/css" id="tempo-custom-css-ie">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 11]>
+	<style type="text/css" id="tempo-custom-css-ie-11">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 10]>
+	<style type="text/css" id="tempo-custom-css-ie-10">
+			</style>
+<![endif]-->
+
+<!--[if IE 9]>
+	<style type="text/css" id="tempo-custom-css-ie-9">
+			</style>
+<![endif]-->
+
+<!--[if IE 8]>
+	<style type="text/css" id="tempo-custom-css-ie-8">
+			</style>
+<![endif]-->
+
+<style type="text/css">
+
+    /* header color */
+    body{
+        background-color: #ffffff;
+    }
+
+    /* background image */
+    body > div.content{
+            }
+
+    /* breadcrumbs space */ 
+    div.mythemes-page-header{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+</style>
+
+<!-- colors options / background color -->
+<style type="text/css" id="mythemes-background-color">
+    body > div.content{
+        background-color: #f5f5f5;
+    }
+</style>
+
+<!-- header options -->
+<!-- header content -->
+<!-- header content headline color -->
+<style type="text/css" id="mythemes-header-headline-color" media="all">
+    div.mythemes-header a.header-headline{
+        color: #e53932    }
+</style>
+
+<!-- header content description color and description hover color -->
+<style type="text/css" id="mythemes-header-description-color" media="all">
+
+    
+    div.mythemes-header a.header-description{
+        color: rgba( 0,0,0, 0.55 );
+    }
+    div.mythemes-header a.header-description:hover{
+        color: rgba( 0,0,0, 1.0 );
+    }
+</style>
+
+<!-- header buttons -->
+<!-- header first button -->
+<!-- header first button text color -->
+<style type="text/css" id="mythemes-header-btn-1-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header first button background color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        background-color: #4caf50;
+    }
+</style>
+
+<!-- header first button background hover color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button:hover{
+        background-color: #43a047;
+    }
+</style>
+
+<!-- header second button -->
+<!-- header second button text color -->
+<style type="text/css" id="mythemes-header-btn-2-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header second button background color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        background-color: #e53935;
+    }
+</style>
+
+<!-- header second button background hover color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button:hover{
+        background-color: #d32f2f;
+    }
+</style>
+
+<!-- others options -->
+<!-- custom css -->
+<style type="text/css" id="mythemes-custom-css">
+    body {background-color: #000000;}
+html{ }
+nav.mythemes-topper ul li a {
+font-size: 16px; font-family: Microsoft Yahei; color: #000000}
+.hentry, .hentry p, article p {
+font-size: 16px;}
+
+div.widget_search fieldset {
+border: 1px solid rgba(64, 80, 121, 0.54);
+}
+.side-nav ul {text-indent:2em;}
+.hentry h2, article h2 {margin-bottom: 30px;}</style><link rel="icon" href="cropped-xue-32x32.gif" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-32x32.gif" sizes="32x32" />
+<link rel="icon" href="cropped-xue-192x192.gif" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-192x192.gif" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="cropped-xue-180x180.gif" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-180x180.gif" />
+<meta name="msapplication-TileImage" content="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-270x270.gif" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+您可以在此处加入您的CSS。
+
+点击上方的帮助图标来了解更多。
+*/
+
+.mythemes-classic .post-thumbnail:hover {
+    background-color: rgba( 0, 0, 0, 0 );
+}		</style>
+	    </head>
+    <body class="post-template-default single single-post postid-413 single-format-standard">
+
+        
+
+        
+        <header class="mythemes-miss-header-image">
+
+            <!-- header navigation -->
+            <nav class="white mythemes-topper" role="navigation">
+                <div class="nav-wrapper container">
+
+                    <!-- header button -->
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mythemes-icon-menu"></i></a>
+
+                    <!-- Site Logo, Title and Description -->
+                    <div class="mythemes-blog-identity"><a class="mythemes-blog-logo" href="index.htm" tppabs="http://www.xuepub.com/" title="学吧 - 一个Web教学网站" style="margin-top: 0px; margin-bottom: 9px;"><img src="logo.png" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/logo.png" title="学吧 - 一个Web教学网站"/></a><a class="mythemes-blog-title" href="index.htm" tppabs="http://www.xuepub.com/" title="学吧 - 一个Web教学网站">学吧</a><a class="mythemes-blog-description" href="index.htm" tppabs="http://www.xuepub.com/" title="学吧 - 一个Web教学网站">一个Web教学网站</a></div><div class="not-collapsed-wrapper"><ul id="menu-main" class="right hide-on-med-and-down"><li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-18"><a href="index.htm" tppabs="http://www.xuepub.com/">首页</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end">前端</a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-17"><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end">后端</a>
+<ul class="sub-menu">
+	<li id="menu-item-139" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-139"><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev">开发</a></li>
+	<li id="menu-item-137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a href="ops.htm" tppabs="http://www.xuepub.com/category/back-end/ops">运维</a></li>
+</ul>
+</li>
+<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="app.htm" tppabs="http://www.xuepub.com/category/app">应用</a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="course.htm" tppabs="http://www.xuepub.com/category/course">课程</a></li>
+</ul></div><div class="collapsed-wrapper"><ul id="nav-mobile" class="side-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-18"><a href="index.htm" tppabs="http://www.xuepub.com/">首页</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end">前端</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-17"><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end">后端</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-139"><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev">开发</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a href="ops.htm" tppabs="http://www.xuepub.com/category/back-end/ops">运维</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="app.htm" tppabs="http://www.xuepub.com/category/app">应用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="course.htm" tppabs="http://www.xuepub.com/category/course">课程</a></li>
+</ul></div>                </div>
+            </nav>
+
+            <!-- the header image and the header elements -->
+            
+        </header>
+
+                <!-- the breadcrumbs content -->
+            <div class="mythemes-page-header">
+
+                <!-- the breadcrumbs container ( align to center ) -->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col s12">
+
+                            <!-- the breadcrumbs navigation path -->
+                            <nav class="mythemes-navigation">
+                              <ul>
+
+                                <!-- the home link -->
+                                <li id="home-label"><a href="index.htm" tppabs="http://www.xuepub.com/" title="go to home"><i class="mythemes-icon-home"></i> <span>Home</span></a></li>
+                                <!-- the post categories ( hierarchical path ) -->
+                                <li><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end" title="See articles from category - 后端">后端</a></li><li><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev" title="See articles from category - 开发">开发</a></li>
+                                <!-- the last arrow from path -->
+                                <li></li>
+
+                              </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+
+    <!--  the content -->
+    <div class="content">
+
+        <!--  the container ( align to center ) -->
+        <div class="container">
+            <div class="row">
+
+                            <!-- the post -->
+                <section class="col s12 m12 l9 mythemes-classic">
+
+                                            <article class="post-413 post type-post status-publish format-standard hentry category-back-end category-dev tag-java">
+
+                                
+                                <!-- the post title -->
+                                <h1 class="post-title">Spring Boot 基础</h1>
+
+                                <!-- the post top meta: author / time / comments -->
+                                        <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-03"><i class="mythemes-icon-calendar"></i>on 2016/06/03</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end" rel="category tag">后端</a></li>
+	<li><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+                                <!-- the post content wrapper -->
+                                <div class="post-content">
+
+                                    <!-- the post content -->
+                                    <h2>参考</h2>
+<ul>
+<li>官方手册 <a href="javascript:if(confirm(%27http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/%27" tppabs="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/" target="_blank">http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/</a></li>
+<li>中文翻译 <a href="javascript:if(confirm(%27http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html%27" tppabs="http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html" target="_blank">http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html</a></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: 24px; line-height: 36px;"><b>构建</b></span></p>
+<ul>
+<li>Spring Initializr <a href="javascript:if(confirm(%27https://start.spring.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://start.spring.io/%27" tppabs="https://start.spring.io/" target="_blank">https://start.spring.io/</a></li>
+<li>Maven / Gradle</li>
+<li>spring-boot-starter-*</li>
+</ul>
+<p>&nbsp;</p>
+<h2>基本代码分析</h2>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c7c7cf1d7637709024" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Vim</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+com
+  +- example
+    +- myproject
+      +- Application.java - 1
+      |
+      +- domain
+      | +- Customer.java - 2
+      | +- CustomerRepository.java - 3
+      |
+      +- service
+      | +- CustomerService.java - 4
+      |
+      +- web
+        +- CustomerController.java - 5</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-2">2</div><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-4">4</div><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-6">6</div><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-8">8</div><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-10">10</div><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-12">12</div><div class="crayon-num" data-line="crayon-61a4c7c7cf1d7637709024-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c7c7cf1d7637709024-14">14</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-1"><span class="crayon-i">com</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">example</span></div><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">myproject</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">Application</span><span class="crayon-sy">.</span><span class="crayon-i">java</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">domain</span></div><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">Customer</span><span class="crayon-sy">.</span><span class="crayon-i">java</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">2</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">CustomerRepository</span><span class="crayon-sy">.</span><span class="crayon-i">java</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">3</span></div><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">service</span></div><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">CustomerService</span><span class="crayon-sy">.</span><span class="crayon-i">java</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">4</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span></div><div class="crayon-line" id="crayon-61a4c7c7cf1d7637709024-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">web</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c7c7cf1d7637709024-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">+</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">CustomerController</span><span class="crayon-sy">.</span><span class="crayon-i">java</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">5</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p>&nbsp;</p>
+<p><strong>Application.java &#8211; 1 </strong></p>
+<p>入口 <span style="color: #ff0000;">Main 方法</span>，执行配置及服务</p>
+<p>类注解 @SpringBootApplication 等同于 @Configuration 配置类 + @EnableAutoConfiguration + @ComponentScan 自动扫描</p>
+<p>@Configuration 使用基于 XML 的配置</p>
+<p>@ComponentScan 用于自动查找所有以 @Component、@Service、@Repository、@Controller 注册的 Bean</p>
+<p>方法注解 @Autowired 指定构造方法注入的依赖</p>
+<p>&nbsp;</p>
+<p><strong>domain/Customer.java &#8211; 2</strong></p>
+<p>POJO<span style="color: #999999;"><span style="color: #000000;">，即</span></span><span style="color: #ff0000;">领域模型</span></p>
+<p>类注解 @Entity</p>
+<p>存储数据对象，定义属性、 get / set 方法，可通过构造方法 set 属性</p>
+<p>&nbsp;</p>
+<p><strong>domain/CustomerRepository.java &#8211; 3</strong></p>
+<p>Spring Data JPA Repositories <span style="color: #ff0000;">数据访问</span></p>
+<p>继承自 Repository&lt;Customer, Long&gt; 或 CrudRepository&lt;Customer, Long&gt; 接口</p>
+<p>&nbsp;</p>
+<p><strong>service/CustomerService.java &#8211; 4</strong></p>
+<p>服务类 / <span style="color: #ff0000;">业务逻辑</span>类 &#8211; 封装功能</p>
+<p>类注解 @Service</p>
+<p>&nbsp;</p>
+<p><strong>web/CustomerController.java &#8211; 5</strong></p>
+<p>Spring Web <span style="color: #ff0000;">MVC 控制器</span></p>
+<p>类注解 @Controller 或 @RestController</p>
+<p>类 / 方法注解 @RequestMapping 指定路由</p>
+<p>返回视图（JSP、模板）或 Json（前后分离）</p>
+<p>&nbsp;</p>
+<h2>配置</h2>
+<p><strong>CustomerConfig.java</strong></p>
+<p>支持基于 Java 和 XML 的配置</p>
+<p>类注解 @Configuration 声明<span style="color: #ff0000;">配置</span>类，用于定义 Bean</p>
+<p>类注解 @ComponentScan 自动扫描</p>
+<p>方法注解 @Bean 声明配置类中方法的返回值为 Bean</p>
+<p>&nbsp;</p>
+<p><strong>application.properties</strong></p>
+<p>功能参数配置</p>
+<p>&nbsp;</p>
+<h2>数据</h2>
+<p><a href="javascript:if(confirm(%27http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/%27" tppabs="http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/" target="_blank">http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/</a></p>
+<p>Spring Data JPA 参考 <a href="javascript:if(confirm(%27http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/%27" tppabs="http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/" target="_blank">http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/</a></p>
+<p>参数自动配置 / Java 手动配置 DataSource</p>
+<p>声明实体类，@Entity</p>
+<p>声明对应的 Dao 接口，继承 CrudRepository 接口</p>
+<p>在控制器中指定 Dao，并操纵数据对象</p>
+<p>&nbsp;</p>
+<h2>认证</h2>
+<p>Spring Security 参考 <a href="javascript:if(confirm(%27http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/%27" tppabs="http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/" target="_blank">http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/</a></p>
+<p><a href="javascript:if(confirm(%27https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql%27" tppabs="https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql" target="_blank">https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql</a></p>
+<p>&nbsp;</p>
+<h2>脚手架</h2>
+<p><strong>JHipster</strong></p>
+<p><a href="javascript:if(confirm(%27https://jhipster.github.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://jhipster.github.io/%27" tppabs="https://jhipster.github.io/" target="_blank">https://jhipster.github.io/</a></p>
+<p>&nbsp;</p>
+<p><strong>Spring Roo</strong></p>
+<p><a href="javascript:if(confirm(%27http://projects.spring.io/spring-roo/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://projects.spring.io/spring-roo/%27" tppabs="http://projects.spring.io/spring-roo/" target="_blank">http://projects.spring.io/spring-roo/</a></p>
+<p>&nbsp;</p>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                            </article>
+
+                            
+                            	        <div class="post-meta-terms">
+	            <div class="post-meta-tags">
+
+	                <span class="mythemes-btn"><i class="mythemes-icon-tags"></i></span>
+	                <a href="java.htm" tppabs="http://www.xuepub.com/tag/java" rel="tag">Java</a>
+	                <div class="clear clearfix"></div>
+	            </div><!-- .post-meta-tags -->
+	        </div><!-- .post-meta-terms -->
+
+                            <!-- the post comments -->
+                            
+                
+                </section>
+
+            <aside class="col s12 m12 l3 mythemes-sidebar sidebar-to-right"><div id="mythemes_post_meta-2" class="widget widget_post_meta"><div class="large-icons"><ul><li><a href="03-1.htm" tppabs="http://www.xuepub.com/date/2016/06/03"><time datetime="2016-06-03"><i class="mythemes-icon-calendar"></i>2016/06/03</time></a></li><li><a href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz"><i class="mythemes-icon-user-5"></i>szzz</a></li></ul></div></div><div id="search-6" class="widget widget_search">
+<!-- search form -->
+<form action="http://www.xuepub.com/" method="get" id="searchform">
+    <fieldset>
+        <div id="searchbox">
+
+        	<!-- search input -->
+            <input type="text" name="s"  id="keywords" value="type here..." onfocus="if (this.value == 'type here...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'type here...';}">
+
+            <!-- search button -->
+            <button type="submit" class="waves-effect waves-light btn green">
+
+            	<!-- button search icon -->
+            	<i class="mythemes-icon-search-5"></i></button>
+        </div>
+    </fieldset>
+</form></div><div id="categories-3" class="widget widget_categories"><h4 class="widget-title">分类目录</h4>		<ul>
+	<li class="cat-item cat-item-3"><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" >前端</a> (7)
+</li>
+	<li class="cat-item cat-item-4"><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end" >后端</a> (17)
+<ul class='children'>
+	<li class="cat-item cat-item-16"><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev" >开发</a> (12)
+</li>
+	<li class="cat-item cat-item-14"><a href="ops.htm" tppabs="http://www.xuepub.com/category/back-end/ops" >运维</a> (5)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-5"><a href="app.htm" tppabs="http://www.xuepub.com/category/app" >应用</a> (9)
+</li>
+	<li class="cat-item cat-item-7"><a href="course.htm" tppabs="http://www.xuepub.com/category/course" >课程</a> (3)
+</li>
+		</ul>
+</div><div id="tag_cloud-5" class="widget widget_tag_cloud"><h4 class="widget-title">标签</h4><div class="tagcloud"><a href="agile.htm" tppabs="http://www.xuepub.com/tag/agile" class='tag-link-20 tag-link-position-1' title='2个话题' style='font-size: 12.581818181818pt;'>Agile</a>
+<a href="c.htm" tppabs="http://www.xuepub.com/tag/c" class='tag-link-8 tag-link-position-2' title='1个话题' style='font-size: 8pt;'>C#</a>
+<a href="css.htm" tppabs="http://www.xuepub.com/tag/css" class='tag-link-17 tag-link-position-3' title='1个话题' style='font-size: 8pt;'>CSS</a>
+<a href="java.htm" tppabs="http://www.xuepub.com/tag/java" class='tag-link-19 tag-link-position-4' title='6个话题' style='font-size: 22pt;'>Java</a>
+<a href="javascript.htm" tppabs="http://www.xuepub.com/tag/javascript" class='tag-link-18 tag-link-position-5' title='3个话题' style='font-size: 15.636363636364pt;'>JavaScript</a>
+<a href="mobile.htm" tppabs="http://www.xuepub.com/tag/mobile" class='tag-link-21 tag-link-position-6' title='1个话题' style='font-size: 8pt;'>Mobile</a>
+<a href="php.htm" tppabs="http://www.xuepub.com/tag/php" class='tag-link-9 tag-link-position-7' title='3个话题' style='font-size: 15.636363636364pt;'>PHP</a>
+<a href="python.htm" tppabs="http://www.xuepub.com/tag/python" class='tag-link-13 tag-link-position-8' title='2个话题' style='font-size: 12.581818181818pt;'>Python</a>
+<a href="wordpress.htm" tppabs="http://www.xuepub.com/tag/wordpress" class='tag-link-10 tag-link-position-9' title='3个话题' style='font-size: 15.636363636364pt;'>WordPress</a></div>
+</div><div id="archives-3" class="widget widget_archive"><h4 class="widget-title">文章归档</h4>		<ul>
+			<li><a href="10.htm" tppabs="http://www.xuepub.com/date/2017/10">2017年十月</a>&nbsp;(1)</li>
+	<li><a href="01.htm" tppabs="http://www.xuepub.com/date/2017/01">2017年一月</a>&nbsp;(1)</li>
+	<li><a href="06.htm" tppabs="http://www.xuepub.com/date/2016/06">2016年六月</a>&nbsp;(9)</li>
+	<li><a href="05.htm" tppabs="http://www.xuepub.com/date/2016/05">2016年五月</a>&nbsp;(8)</li>
+	<li><a href="04.htm" tppabs="http://www.xuepub.com/date/2016/04">2016年四月</a>&nbsp;(9)</li>
+	<li><a href="03.htm" tppabs="http://www.xuepub.com/date/2016/03">2016年三月</a>&nbsp;(5)</li>
+	<li><a href="01-1.htm" tppabs="http://www.xuepub.com/date/2016/01">2016年一月</a>&nbsp;(1)</li>
+	<li><a href="07.htm" tppabs="http://www.xuepub.com/date/2015/07">2015年七月</a>&nbsp;(1)</li>
+		</ul>
+		</div>		<div id="recent-posts-4" class="widget widget_recent_entries">		<h4 class="widget-title">近期文章</h4>		<ul>
+					<li>
+				<a href="563.html" tppabs="http://www.xuepub.com/563.html">数据分析</a>
+							<span class="post-date">2017/10/09</span>
+						</li>
+					<li>
+				<a href="536.html" tppabs="http://www.xuepub.com/536.html">AngularJS 实践心得</a>
+							<span class="post-date">2017/01/02</span>
+						</li>
+					<li>
+				<a href="521.html" tppabs="http://www.xuepub.com/521.html">用户故事简述</a>
+							<span class="post-date">2016/06/24</span>
+						</li>
+					<li>
+				<a href="507.html" tppabs="http://www.xuepub.com/507.html">Docker 基础</a>
+							<span class="post-date">2016/06/20</span>
+						</li>
+					<li>
+				<a href="502.html" tppabs="http://www.xuepub.com/502.html">Ionic 简述</a>
+							<span class="post-date">2016/06/17</span>
+						</li>
+					<li>
+				<a href="490.html" tppabs="http://www.xuepub.com/490.html">AngularJS 1 学习</a>
+							<span class="post-date">2016/06/15</span>
+						</li>
+					<li>
+				<a href="470.html" tppabs="http://www.xuepub.com/470.html">JHipster 简述</a>
+							<span class="post-date">2016/06/13</span>
+						</li>
+					<li>
+				<a href="449.html" tppabs="http://www.xuepub.com/449.html">React 基础</a>
+							<span class="post-date">2016/06/08</span>
+						</li>
+				</ul>
+		</div>		</aside>
+            </div>
+        </div><!-- .container -->
+    </div><!-- .content -->
+
+
+        <footer>
+                                <!-- footer sidebars -->
+                    <aside class="mythemes-footer-sidebars">
+
+                        <!-- the sidebars container ( align to center ) -->
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- first footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-2" class="widget widget_text"><h5>服务器</h5>			<div class="textwidget">San Francisco<br>
+Digital Ocean</div>
+		</div>                                </div>
+
+                                <!-- second footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-3" class="widget widget_text"><h5>运维</h5>			<div class="textwidget">szzz</div>
+		</div>                                </div>
+
+                                <!-- third footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-4" class="widget widget_text"><h5>联系方式</h5>			<div class="textwidget">xuepub@126.com</div>
+		</div>                                </div>
+
+                                <!-- fourth footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-5" class="widget widget_text"><h5>赞助</h5>			<div class="textwidget">No thanks.</div>
+		</div>                                </div>
+
+                            </div>
+                        </div><!-- .container -->
+                    </aside><!-- .mythemes-footer-sidebars -->
+            
+            <!-- dark mask social and copyright wrapper -->
+            <div class="mythemes-dark-mask">
+
+                
+                
+                <!-- copyright -->
+                <div class="mythemes-copyright">
+
+                    <!-- copyright container ( align to center ) -->
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col s12">
+                                <p>
+
+                                    
+                                    <span class="copyright">Copyright © 2016.</span>
+                                    
+                                    
+                                    <span>Designed by <a href="javascript:if(confirm(%27http://mythem.es/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://mythem.es/%27" tppabs="http://mythem.es/" target="_blank" title="myThem.es" class="mythemes">myThem.es</a>.</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div><!-- .container -->
+                </div><!-- .mythemes-copyright -->
+            </div>
+
+        </footer>
+
+        <script type='text/javascript' src="imagesloaded.min.js-ver=3.2.0.js" tppabs="http://www.xuepub.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0"></script>
+<script type='text/javascript' src="masonry.min.js-ver=3.3.2.js" tppabs="http://www.xuepub.com/wp-includes/js/masonry.min.js?ver=3.3.2"></script>
+<script type='text/javascript' src="functions.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/functions.js?ver=0.0.16"></script>
+<script type='text/javascript' src="materialize.min.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/materialize.min.js?ver=0.0.16"></script>
+<script type='text/javascript' src="jquery.prettyPhoto.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.js?ver=0.0.16"></script>
+<script type='text/javascript' src="jquery.prettyPhoto.settings.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.settings.js?ver=0.0.16"></script>
+<script type='text/javascript' src="wp-embed.min.js-ver=4.7.3.js" tppabs="http://www.xuepub.com/wp-includes/js/wp-embed.min.js?ver=4.7.3"></script>
+
+    </body>
+</html>

@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+        
+        <title>前端 &#8211; 学吧</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; Feed" href="http://www.xuepub.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; 评论Feed" href="http://www.xuepub.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; 前端分类目录Feed" href="http://www.xuepub.com/category/front-end/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.xuepub.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css'  href="crayon.min.css-ver=_2.7.2_beta.css" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-github-css'  href="github.css-ver=_2.7.2_beta.css" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/themes/github/github.css?ver=_2.7.2_beta" type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-consolas-css'  href="consolas.css-ver=_2.7.2_beta.css" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/fonts/consolas.css?ver=_2.7.2_beta" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-1-css'  href="css-family=Poiret+One&ver=0.0.16.css" tppabs="http://fonts.googleapis.com/css?family=Poiret+One&ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-2-css'  href="css-family=Raleway-400,100,200,300,500,600,700,800,900&ver=0.0.16.css" tppabs="http://fonts.googleapis.com/css?family=Raleway%3A400%2C100%2C200%2C300%2C500%2C600%2C700%2C800%2C900&ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-3-css'  href="css-family=Open+Sans-300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese&ver=0.0.16.css" tppabs="http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C600%2C700%2C800%2C300&subset=latin%2Ccyrillic-ext%2Clatin-ext%2Ccyrillic%2Cgreek-ext%2Cgreek%2Cvietnamese&ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-icons-css'  href="mythemes-icons.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/css/mythemes-icons.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-effects-css'  href="effects.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/effects.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-header-css'  href="header.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/header.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-materialize-css'  href="materialize.min.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/materialize.min.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-typography-css'  href="typography.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/typography.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-navigation-css'  href="navigation.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/navigation.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-nav-css'  href="nav.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/nav.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-blog-css'  href="blog.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/blog.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-forms-css'  href="forms.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/forms.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-elements-css'  href="elements.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/elements.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-widgets-css'  href="widgets.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/widgets.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-css'  href="comments.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/comments.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-typography-css'  href="comments-typography.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/comments-typography.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-footer-css'  href="footer.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/footer.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-pretty-photo-css'  href="prettyPhoto.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/prettyPhoto.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-plugins-css'  href="plugins.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/plugins.css?ver=0.0.16" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-style-css'  href="style.css-ver=4.7.3.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/style.css?ver=4.7.3" type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='materialize-ie-css'  href="ie.css-ver=0.0.16.css" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/css/ie.css?ver=0.0.16" type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='tablepress-default-css'  href="default.min.css-ver=1.8.1.css" tppabs="http://www.xuepub.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.8.1" type='text/css' media='all' />
+<script type='text/javascript' src="jquery.js-ver=1.12.4.js" tppabs="http://www.xuepub.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type='text/javascript' src="jquery-migrate.min.js-ver=1.4.1.js" tppabs="http://www.xuepub.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.xuepub.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="crayon.min.js-ver=_2.7.2_beta.js" tppabs="http://www.xuepub.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src="respond.min.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/respond.min.js?ver=0.0.16"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src="html5shiv.min.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/html5shiv.min.js?ver=0.0.16"></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='http://www.xuepub.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.xuepub.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.xuepub.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.3" />
+<!--[if IE]>
+	<style type="text/css" id="tempo-custom-css-ie">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 11]>
+	<style type="text/css" id="tempo-custom-css-ie-11">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 10]>
+	<style type="text/css" id="tempo-custom-css-ie-10">
+			</style>
+<![endif]-->
+
+<!--[if IE 9]>
+	<style type="text/css" id="tempo-custom-css-ie-9">
+			</style>
+<![endif]-->
+
+<!--[if IE 8]>
+	<style type="text/css" id="tempo-custom-css-ie-8">
+			</style>
+<![endif]-->
+
+<style type="text/css">
+
+    /* header color */
+    body{
+        background-color: #ffffff;
+    }
+
+    /* background image */
+    body > div.content{
+            }
+
+    /* breadcrumbs space */ 
+    div.mythemes-page-header{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+</style>
+
+<!-- colors options / background color -->
+<style type="text/css" id="mythemes-background-color">
+    body > div.content{
+        background-color: #f5f5f5;
+    }
+</style>
+
+<!-- header options -->
+<!-- header content -->
+<!-- header content headline color -->
+<style type="text/css" id="mythemes-header-headline-color" media="all">
+    div.mythemes-header a.header-headline{
+        color: #e53932    }
+</style>
+
+<!-- header content description color and description hover color -->
+<style type="text/css" id="mythemes-header-description-color" media="all">
+
+    
+    div.mythemes-header a.header-description{
+        color: rgba( 0,0,0, 0.55 );
+    }
+    div.mythemes-header a.header-description:hover{
+        color: rgba( 0,0,0, 1.0 );
+    }
+</style>
+
+<!-- header buttons -->
+<!-- header first button -->
+<!-- header first button text color -->
+<style type="text/css" id="mythemes-header-btn-1-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header first button background color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        background-color: #4caf50;
+    }
+</style>
+
+<!-- header first button background hover color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button:hover{
+        background-color: #43a047;
+    }
+</style>
+
+<!-- header second button -->
+<!-- header second button text color -->
+<style type="text/css" id="mythemes-header-btn-2-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header second button background color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        background-color: #e53935;
+    }
+</style>
+
+<!-- header second button background hover color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button:hover{
+        background-color: #d32f2f;
+    }
+</style>
+
+<!-- others options -->
+<!-- custom css -->
+<style type="text/css" id="mythemes-custom-css">
+    body {background-color: #000000;}
+html{ }
+nav.mythemes-topper ul li a {
+font-size: 16px; font-family: Microsoft Yahei; color: #000000}
+.hentry, .hentry p, article p {
+font-size: 16px;}
+
+div.widget_search fieldset {
+border: 1px solid rgba(64, 80, 121, 0.54);
+}
+.side-nav ul {text-indent:2em;}
+.hentry h2, article h2 {margin-bottom: 30px;}</style><link rel="icon" href="cropped-xue-32x32.gif" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-32x32.gif" sizes="32x32" />
+<link rel="icon" href="cropped-xue-192x192.gif" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-192x192.gif" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="cropped-xue-180x180.gif" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-180x180.gif" />
+<meta name="msapplication-TileImage" content="http://www.xuepub.com/wp-content/uploads/2016/04/cropped-xue-270x270.gif" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+您可以在此处加入您的CSS。
+
+点击上方的帮助图标来了解更多。
+*/
+
+.mythemes-classic .post-thumbnail:hover {
+    background-color: rgba( 0, 0, 0, 0 );
+}		</style>
+	    </head>
+    <body class="archive category category-front-end category-3">
+
+        
+
+        
+        <header class="mythemes-miss-header-image">
+
+            <!-- header navigation -->
+            <nav class="white mythemes-topper" role="navigation">
+                <div class="nav-wrapper container">
+
+                    <!-- header button -->
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mythemes-icon-menu"></i></a>
+
+                    <!-- Site Logo, Title and Description -->
+                    <div class="mythemes-blog-identity"><a class="mythemes-blog-logo" href="index.htm" tppabs="http://www.xuepub.com/" title="学吧 - 一个Web教学网站" style="margin-top: 0px; margin-bottom: 9px;"><img src="logo.png" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/logo.png" title="学吧 - 一个Web教学网站"/></a><a class="mythemes-blog-title" href="index.htm" tppabs="http://www.xuepub.com/" title="学吧 - 一个Web教学网站">学吧</a><a class="mythemes-blog-description" href="index.htm" tppabs="http://www.xuepub.com/" title="学吧 - 一个Web教学网站">一个Web教学网站</a></div><div class="not-collapsed-wrapper"><ul id="menu-main" class="right hide-on-med-and-down"><li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-18"><a href="index.htm" tppabs="http://www.xuepub.com/">首页</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-16"><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end">前端</a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-17"><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end">后端</a>
+<ul class="sub-menu">
+	<li id="menu-item-139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139"><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev">开发</a></li>
+	<li id="menu-item-137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a href="ops.htm" tppabs="http://www.xuepub.com/category/back-end/ops">运维</a></li>
+</ul>
+</li>
+<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="app.htm" tppabs="http://www.xuepub.com/category/app">应用</a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="course.htm" tppabs="http://www.xuepub.com/category/course">课程</a></li>
+</ul></div><div class="collapsed-wrapper"><ul id="nav-mobile" class="side-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-18"><a href="index.htm" tppabs="http://www.xuepub.com/">首页</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-16"><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end">前端</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-17"><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end">后端</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139"><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev">开发</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a href="ops.htm" tppabs="http://www.xuepub.com/category/back-end/ops">运维</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="app.htm" tppabs="http://www.xuepub.com/category/app">应用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="course.htm" tppabs="http://www.xuepub.com/category/course">课程</a></li>
+</ul></div>                </div>
+            </nav>
+
+            <!-- the header image and the header elements -->
+            
+        </header>
+
+                <!-- the breadcrumbs content -->
+            <div class="mythemes-page-header">
+
+                <!-- the breadcrumbs container ( align to center ) -->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col s12 m8 l9">
+                    
+                            <!-- the breadcrumbs navigation path -->
+                            <nav class="mythemes-nav-inline">
+                                <ul class="mythemes-menu">
+
+                                    <li id="home-label"><a href="index.htm" tppabs="http://www.xuepub.com/" title="go to home"><i class="mythemes-icon-home"></i> <span>Home</span></a></li><li>前端</li>
+                                    <!-- the last arrow from path -->
+                                    <li></li>
+                                </ul>
+                            </nav>
+
+                            <!-- the headline -->
+                            <h1>Category Archives</h1>
+                        </div>
+
+                        <!-- the number of posts from category -->
+                        <div class="col s12 m4 l3 mythemes-posts-found">
+                            <div class="found-details">
+                                <span>7 Articles</span>                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+
+    <!-- the content -->
+    <div class="content">
+
+        <!-- the container ( align to center ) -->
+        <div class="container">
+            <div class="row">
+
+                
+<!-- content -->
+<section class="col s12 m12 l9 mythemes-classic mythemes-classic">
+
+
+    <!-- post content wrapper -->
+    <article class="post-536 post type-post status-publish format-standard has-post-thumbnail hentry category-front-end">
+
+                        <!-- the post thumbnail wrapper -->
+                <div class="post-thumbnail overflow-wrapper">
+                    <img width="553" height="141" src="AngularJS.png" tppabs="http://www.xuepub.com/wp-content/uploads/2017/01/AngularJS.png" class="img-background effect-scale wp-post-image" alt="AngularJS 实践心得" srcset="http://www.xuepub.com/wp-content/uploads/2017/01/AngularJS.png 553w, http://www.xuepub.com/wp-content/uploads/2017/01/AngularJS-300x76.png 300w" sizes="(max-width: 553px) 100vw, 553px" />
+                    <!-- the post thumbnail permalink ( go to single post ) -->
+                    <a href="536.html" tppabs="http://www.xuepub.com/536.html" class="valign-cell-wrapper" title="AngularJS 实践心得">
+                    </a>
+
+
+                                    </div><!-- .post-thumbnail -->
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="536.html" tppabs="http://www.xuepub.com/536.html" title="AngularJS 实践心得">AngularJS 实践心得</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2017-01-02"><i class="mythemes-icon-calendar"></i>on 2017/01/02</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>0. 序</h2>
+<p>2016 年下半年，我主持的 web 开发项目中，深度使用了基于 Jhipster 环境的 Angular + Spring Boot 架构，</p>
+<p>对于 Angular 单页应用的写法有了一些心得，分享于此：</p>
+<p>&nbsp;</p>
+<h2>1. 代码规范与文件结构</h2>
+<h2><img class="alignnone size-full wp-image-538" src="ng-clean-code-banner.png" tppabs="http://www.xuepub.com/wp-content/uploads/2016/12/ng-clean-code-banner.png" alt="" width="640" height="172" srcset="http://www.xuepub.com/wp-content/uploads/2016/12/ng-clean-code-banner.png 640w, http://www.xuepub.com/wp-content/uploads/2016/12/ng-clean-code-banner-300x81.png 300w" sizes="(max-width: 640px) 100vw, 640px" /></h2>
+<p>Jhipster 生成的前端代码，最初采用了John Papa 著名的 <a href="javascript:if(confirm(%27https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md%27" tppabs="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Angular 编码规范</a>。</p>
+<p>后续开发中建议延续该风格，其要点是：</p>
+<ul>
+<li>职责单一原则，一个 js 文件只做一件事（state、controller、service、directive）</li>
+<li>使用概念更清晰的 vm （一些连接视图-模型的对象）替换 scope，<br />
+除了在最常见的 controller 和 html 组合中使用，还应在 directive 中使用 vm</li>
+<li>LIFT 原则：快速 L 定位代码、优雅 I 标识代码 、保持最 F 平等的结构、T 尝试不重造轮子</li>
+</ul>
+<p>&nbsp;</p>
+<p>根据项目的情况，文件结构采用了主题驱动，即将同一主题的页面文件放在同一目录下。</p>
+<p>另设置了 app/service/ 目录，集中实现了对后端 REST 接口的 $resource 调用</p>
+<p>&nbsp;</p>
+<h2>2. SEO</h2>
+<p>AngularJS 最让人头疼的莫过于 SEO。</p>
+<p>Baiduspider 无法读取单页应用中的内容。</p>
+<p>陆续看了知乎专栏、去哪儿网以及 angular 中文社区的设计，参考了 <a href="javascript:if(confirm(%27https://prerender.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://prerender.io/%27" tppabs="https://prerender.io/">Prerender</a> 的源码后，解决方案如下：</p>
+<h3>Step 1</h3>
+<p>需要先将页面中的 # 去掉，前端在 Angular 中使用 html5Mode，</p>
+<p>后端在 Java 中写 filter（ nginx 中，可以通过修改 rewrite 实现）</p>
+<h3>Step 2</h3>
+<p>在后端的 filter 中监听首页或特定页面的 http 请求，</p>
+<p>当发现 User-Agent 为爬虫时，通过非 Angular SPA 的方式（如 JSP &#8211; Thymeleaf），后端渲染后返回</p>
+<p>&nbsp;</p>
+<h2>3. ng-show、ng-if、ng-class、ng-repeat</h2>
+<p>ng-if，用于初始化时确定显示/隐藏的内容，适用于不同 directive 的切换</p>
+<p>ng-show，可用于各种状态下内容的显示/隐藏，但是可能有闪烁的问题</p>
+<p>ng-class 的 visibility 可以解决某两个元素同步显示/隐藏的问题，避免了同步闪烁</p>
+<p>&nbsp;</p>
+<p>闪烁的解决方案：</p>
+<ul>
+<li>设置 vm.dataIsReady 字段，用于数据加载完成之后，显示出闪烁部分的内容</li>
+<li>数据异步加载，一定要在回调中设置 vm.dataIsReady = true</li>
+<li>数据循环处理，需要在代码段中加上 $timeout(function( vm.dataIsReady = true; ));</li>
+</ul>
+<p>&nbsp;</p>
+<p>ng-repeat 在嵌套时，外层 ng-repeat 的$index 被内层覆盖，需要根据情况手动加入数据索引</p>
+<p>&nbsp;</p>
+<h2>4. REST / $resource</h2>
+<ul>
+<li>尽可能减少 REST 的次数，前后端要做出相应的调整，比如打包多个对象后传输一次</li>
+<li>禁止在循环中使用 REST，可对返回的数组进行循环</li>
+<li>多次 REST  要严格使用回调，上一次 REST 成功回调后，再执行下一次 REST</li>
+</ul>
+<p>&nbsp;</p>
+<p>使用 $resource 所构造的服务时，需要注意参数的设置：</p>
+<ul>
+<li>参数1：url 中多个参数的值对象</li>
+<li>参数2： POST / PUT 的上传对象</li>
+<li>参数3：成功回调函数</li>
+<li>参数4：失败回调函数</li>
+</ul>
+<p>&nbsp;</p>
+<h2>5. ui-router / directive</h2>
+<ul>
+<li>使用 ui-router 对状态进行管理，支持 url 切换；页面局部不切换 url，建议使用 directive</li>
+<li>directive 的对象双绑 &#8220;=&#8221;，函数单绑 &#8220;&amp;&#8221;</li>
+<li>使用 $watch 对传入 directive  的对象进行监控</li>
+</ul>
+<p>&nbsp;</p>
+<h2>6. 其他</h2>
+<ul>
+<li>$sce.trustAsHtml() 与 ng-bind-html 使用会引起安全问题，需要有另外的 js 注入检测</li>
+<li>ng 可与 d3.js 完美结合</li>
+<li>有用工具 ng-inspector</li>
+</ul>
+<p>&nbsp;</p>
+<p>（待完善）</p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-502 post type-post status-publish format-standard hentry category-front-end tag-mobile">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="502.html" tppabs="http://www.xuepub.com/502.html" title="Ionic 简述">Ionic 简述</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-17"><i class="mythemes-icon-calendar"></i>on 2016/06/17</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <p>&nbsp;</p>
+<p>Ionic 用于开发基于 HTML5 的混合移动应用</p>
+<p>&nbsp;</p>
+<h2>参考</h2>
+<p>开源站点 <a href="javascript:if(confirm(%27http://ionicframework.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://ionicframework.com/%27" tppabs="http://ionicframework.com/" target="_blank">http://ionicframework.com/</a></p>
+<p>付费版 <a href="javascript:if(confirm(%27http://www.ionic.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.ionic.io/%27" tppabs="http://www.ionic.io/" target="_blank">http://www.ionic.io/</a></p>
+<p>&nbsp;</p>
+<h2>准备</h2>
+<p>首先安装 NodeJS <a href="javascript:if(confirm(%27https://nodejs.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://nodejs.org/%27" tppabs="https://nodejs.org/" target="_blank">https://nodejs.org/</a></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcd5e3718669525" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Vim</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+$ npm install -g cordova ionic</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcd5e3718669525-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcd5e3718669525-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">npm </span><span class="crayon-i">install</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">g</span><span class="crayon-h"> </span><span class="crayon-e">cordova </span><span class="crayon-i">ionic</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>Cordova <a href="javascript:if(confirm(%27http://cordova.apache.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://cordova.apache.org/%27" tppabs="http://cordova.apache.org/" target="_blank">http://cordova.apache.org/</a> 用于本地构建移动应用</p>
+<p>&nbsp;</p>
+<h2>本地构建</h2>
+<p><strong>Android</strong></p>
+<p>下载安卓 SDK <a href="javascript:if(confirm(%27http://www.android-studio.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.android-studio.org/%27" tppabs="http://www.android-studio.org/" target="_blank">http://www.android-studio.org/</a> 无需安装 Android Studio</p>
+<p>配置 SDK <a href="javascript:if(confirm(%27https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html%27" tppabs="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html" target="_blank">https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html</a></p>
+<p>可使用模拟器，或打包为 apk</p>
+<p>&nbsp;</p>
+<p><strong>iOS</strong></p>
+<p>使用 macOS，Xcode</p>
+<p>&nbsp;</p>
+<h2>开发</h2>
+<p>界面使用了 AngularJS http://www.xuepub.com/490.html</p>
+<p>界面生成器 <a href="javascript:if(confirm(%27http://ionic.io/products/creator/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://ionic.io/products/creator/%27" tppabs="http://ionic.io/products/creator/" target="_blank">http://ionic.io/products/creator/</a> 可用于生成原型</p>
+<p>最佳实践 <a href="javascript:if(confirm(%27https://github.com/mwaylabs/generator-m-ionic  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/mwaylabs/generator-m-ionic%27" tppabs="https://github.com/mwaylabs/generator-m-ionic" target="_blank">https://github.com/mwaylabs/generator-m-ionic</a></p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-490 post type-post status-publish format-standard hentry category-front-end tag-javascript">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="490.html" tppabs="http://www.xuepub.com/490.html" title="AngularJS 1 学习">AngularJS 1 学习</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-15"><i class="mythemes-icon-calendar"></i>on 2016/06/15</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <p>&nbsp;</p>
+<p>AngularJS 1 即将退役，由基于 TypeScript 的 Angular 2 取代</p>
+<p>旨在开发 SPA 单页应用</p>
+<p>&nbsp;</p>
+<h2>参考资料</h2>
+<ul>
+<li>官方主页 <a href="javascript:if(confirm(%27https://angularjs.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://angularjs.org/%27" tppabs="https://angularjs.org/" target="_blank">https://angularjs.org/</a></li>
+<li>官方文档 <a href="javascript:if(confirm(%27https://docs.angularjs.org/guide  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://docs.angularjs.org/guide%27" tppabs="https://docs.angularjs.org/guide" target="_blank">https://docs.angularjs.org/guide</a></li>
+<li>入门 <a href="javascript:if(confirm(%27http://w3schools.bootcss.com/angular/default.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://w3schools.bootcss.com/angular/default.html%27" tppabs="http://w3schools.bootcss.com/angular/default.html" target="_blank">http://w3schools.bootcss.com/angular/default.html</a></li>
+<li>中文参考 <a href="javascript:if(confirm(%27https://github.com/jmcunningham/AngularJS-Learning/blob/master/ZH-CN.md  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/jmcunningham/AngularJS-Learning/blob/master/ZH-CN.md%27" tppabs="https://github.com/jmcunningham/AngularJS-Learning/blob/master/ZH-CN.md" target="_blank">https://github.com/jmcunningham/AngularJS-Learning/blob/master/ZH-CN.md</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>图书</h2>
+<ul>
+<li>《AngularJS 学习手册》，Oreilly</li>
+<li>《用 AngularJS 开发下一代 Web 应用》，Oreilly</li>
+<li>《AngularJS 权威教程》，ng-book</li>
+</ul>
+<p>&nbsp;</p>
+<h2>核心概念</h2>
+<ul>
+<li>Template 模板：附加标记的 HTML</li>
+<li>Directives 指令：自定义属性和元素的扩展 HTML</li>
+<li>Model 模型：视图中显示给用户的数据，并与用户交互</li>
+<li>Scope 域：存储模型的上下文，以便于控制器指令和表达式访问 $scope</li>
+<li>Expressions 表达式：从域中访问变量和函数 {{ expression }}</li>
+<li>Compiler 编译器：解析模板、初始化指令和表达式</li>
+<li>Filter 过滤器：为用户显示格式化表达式值 {{ expression | filter }}</li>
+<li>View 视图：用户所见（DOM）</li>
+<li>Data Binding 数据绑定：在模型和视图之间同步数据</li>
+<li>Controller 控制器：视图后的商业逻辑</li>
+<li>Dependency Injection 依赖注入：创建并连接对象和函数</li>
+<li>Injector 注入器：依赖注入容器</li>
+<li>Module 模块：一个容器用于应用的不同部分，包括控制器、服务、过滤器、指令，由注入器配置</li>
+<li>Service 服务：依赖视图的可重用商业逻辑</li>
+</ul>
+<p>&nbsp;</p>
+<h2>常用指令</h2>
+<ul>
+<li>ng-app 声明 AngularJS 应用的根元素，其中指令可用于声明绑定和定义行为</li>
+<li>ng-bind 设置 DOM 元素的文本为表达式值。如 &lt;span ng-bind=&#8221;name&#8221;&gt;&lt;/span&gt; 在 span 元素中显示了 name 的值，任何在应用域中变量 name 的更改都立刻反应到 DOM</li>
+<li>ng-model 与 ng-bind 相似，但在视图和域之间建立了一个双向数据绑定</li>
+<li>ng-model-options 提供了如何做模型更新的调整</li>
+<li>ng-class 让 class 属性动态加载</li>
+<li>ng-controller 指定一个 JavaScript 控制器类，对 HTML 表达式求值</li>
+<li>ng-repeat 从一个集合中每项实例化一个元素</li>
+<li>ng-show &amp; ng-hide 有条件的显示或隐藏元素，根据布尔表达式的值。显示和隐藏通过设置 CSS display 样式来完成</li>
+<li>ng-switch 有条件的从一系列选择中实例化一个模板，根据选择表达式的值</li>
+<li>ng-view 这一基本指令负责处理路由，由特定的控制器驱动，在渲染模板之前解析 JSON</li>
+<li>ng-if 基本的 if 表达式指令，允许显示是否条件为 true 的元素。当条件为false，元素将从 DOM 移除。当 true 重新插入编译过的元素备份</li>
+<li>ng-aria 一个模块用来支持通用 ARIA 属性</li>
+<li>ng-animate 一个模块提供了 JavaScript、CSS3 过渡和 CSS3 关键帧动画的支持，连接已有的核心和自定义指令</li>
+</ul>
+<p>&nbsp;</p>
+<h2>模块 &amp; 插件</h2>
+<p><strong>模块</strong></p>
+<ul>
+<li><a href="javascript:if(confirm(%27https://docs.angularjs.org/api  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://docs.angularjs.org/api%27" tppabs="https://docs.angularjs.org/api" target="_blank">https://docs.angularjs.org/api</a></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>插件</strong></p>
+<ul>
+<li><a href="javascript:if(confirm(%27http://angular-ui.github.io/bootstrap/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://angular-ui.github.io/bootstrap/%27" tppabs="http://angular-ui.github.io/bootstrap/" target="_blank">http://angular-ui.github.io/bootstrap/</a></li>
+<li><a href="javascript:if(confirm(%27http://angular-ui.github.io/ui-router/site  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://angular-ui.github.io/ui-router/site%27" tppabs="http://angular-ui.github.io/ui-router/site" target="_blank">http://angular-ui.github.io/ui-router/site</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>最佳实践</h2>
+<ul>
+<li>Angular 代码规范（中文）<a href="javascript:if(confirm(%27http://www.reqianduan.com/1722.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.reqianduan.com/1722.html%27" tppabs="http://www.reqianduan.com/1722.html" target="_blank">http://www.reqianduan.com/1722.html</a></li>
+<li>yo 脚手架 <a href="javascript:if(confirm(%27https://github.com/yeoman/generator-angular  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/yeoman/generator-angular%27" tppabs="https://github.com/yeoman/generator-angular" target="_blank">https://github.com/yeoman/generator-angular</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>（to be continue&#8230;）</p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-449 post type-post status-publish format-standard hentry category-front-end tag-javascript">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="449.html" tppabs="http://www.xuepub.com/449.html" title="React 基础">React 基础</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-08"><i class="mythemes-icon-calendar"></i>on 2016/06/08</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>参考</h2>
+<ul>
+<li>官方主页 <a href="javascript:if(confirm(%27http://facebook.github.io/react/docs/getting-started.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://facebook.github.io/react/docs/getting-started.html%27" tppabs="http://facebook.github.io/react/docs/getting-started.html" target="_blank">http://facebook.github.io/react/docs/getting-started.html</a></li>
+<li>中文翻译 <a href="javascript:if(confirm(%27http://reactjs.cn/react/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://reactjs.cn/react/index.html%27" tppabs="http://reactjs.cn/react/index.html" target="_blank">http://reactjs.cn/react/index.html</a></li>
+<li>工具 <a href="javascript:if(confirm(%27https://github.com/facebook/react/wiki/Complementary-Tools  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/facebook/react/wiki/Complementary-Tools%27" tppabs="https://github.com/facebook/react/wiki/Complementary-Tools" target="_blank">https://github.com/facebook/react/wiki/Complementary-Tools</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>引入</h2>
+<p>一般在 HTML 中 &lt;body&gt; 的最后引入</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdc43973774722" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-mixed-highlight" title="Contains Mixed Languages"></span><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+&lt;script src="https://cdn.bootcss.com/react/15.1.0/react.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.bootcss.com/react/15.1.0/react-dom.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"&gt;&lt;/script&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdc43973774722-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc43973774722-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdc43973774722-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc43973774722-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdc43973774722-1"><span class="crayon-ta">&lt;script </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://cdn.bootcss.com/react/15.1.0/react.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc43973774722-2"><span class="crayon-ta">&lt;script </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://cdn.bootcss.com/react/15.1.0/react-dom.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc43973774722-3"><span class="crayon-ta">&lt;script </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc43973774722-4"><span class="crayon-ta">&lt;script </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p>其中引入 Bable 用于解析 JSX 标签，引入 jQuery 用于 Ajax 数据获取</p>
+<p>Chrome 中的 React Developer Tools，用于调试 Web Server 发布的 React 页面</p>
+<p>&nbsp;</p>
+<h2>基本概念</h2>
+<p><strong>第一个 React 程序</strong></p>
+<p>创建自定义组件 component</p>
+<p>React.createClass() 用来创建新的 React 组件 &lt;Hello&gt;，</p>
+<p>其中的 render 渲染函数返回 JSX 标记，</p>
+<p>ReactDOM.render() 使用新组件 Hello，注入至 #content</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdc49441675625" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-mixed-highlight" title="Contains Mixed Languages"></span><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+&lt;body&gt;
+    &lt;div id="content"&gt;&lt;/div&gt;
+    &lt;script type="text/babel"&gt;
+        //这里是 React 代码
+        var Hello = React.createClass({
+            render: function() {
+                return (
+                    &lt;div&gt;
+                        &lt;h1&gt;Hello&lt;/h1&gt;
+                    &lt;/div&gt;
+                );
+            }
+        });
+        ReactDOM.render(
+            &lt;Hello /&gt;,
+            document.getElementById('content')
+        );
+    &lt;/script&gt;
+&lt;/body&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-4">4</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-6">6</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-8">8</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-10">10</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-12">12</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-14">14</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-16">16</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc49441675625-18">18</div><div class="crayon-num" data-line="crayon-61a4c79fcdc49441675625-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-1"><span class="crayon-r ">&lt;body&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"content"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">"text/babel"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//这里是 React 代码</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">Hello</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">React</span><span class="crayon-sy">.</span><span class="crayon-e">createClass</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">render</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">div</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">h1</span><span class="crayon-o">&gt;</span><span class="crayon-v">Hello</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">h1</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">div</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">ReactDOM</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">Hello</span><span class="crayon-h"> </span><span class="crayon-c ">/&gt;,</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-16"><span class="crayon-c ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('content')</span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-17"><span class="crayon-c ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc49441675625-18"><span class="crayon-c ">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s</span><span class="crayon-v">cript</span><span class="crayon-o">&gt;</span></span></div><div class="crayon-line" id="crayon-61a4c79fcdc49441675625-19"><span class="crayon-r ">&lt;/body&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>{ }</strong></p>
+<p>JSX 中的 { } 能够嵌入 JS 对象，即动态信息</p>
+<p>获取 JS 变量，包括属性 {this.props.foo}、状态 {this.state.foo}、子节点 {this.props.children}</p>
+<p>获取 JS 函数的返回值 {this.f()}，或触发事件</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdc4c488269062" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+var s = 'Sunny';
+var Hello = React.createClass({
+    render: function() {
+        return (
+            &lt;div&gt;          
+                &lt;h1&gt;Hello {this.props.name}!&lt;/h1&gt;
+                &lt;h2&gt;{this.props.children}, {s}&lt;/h2&gt;  
+            &lt;/div&gt; 
+        );
+    }
+});
+ReactDOM.render(
+    &lt;Hello name="szzz"&gt;Children node content.&lt;/Hello&gt;,
+    document.getElementById('content')
+);&lt;br&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-4">4</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-6">6</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-8">8</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-10">10</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-12">12</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4c488269062-14">14</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4c488269062-15">15</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-1"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-e ">s</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'Sunny'</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-2"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">Hello</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">React</span><span class="crayon-sy">.</span><span class="crayon-e">createClass</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">render</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-sy">(</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">div</span><span class="crayon-o">&gt;</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">h1</span><span class="crayon-o">&gt;</span><span class="crayon-e">Hello</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">props</span><span class="crayon-sy">.</span><span class="crayon-v">name</span><span class="crayon-sy">}</span><span class="crayon-o">!</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">h1</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">h2</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">props</span><span class="crayon-sy">.</span><span class="crayon-v">children</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">s</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">h2</span><span class="crayon-o">&gt;</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">div</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-11"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-12"><span class="crayon-v">ReactDOM</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">Hello </span><span class="crayon-r">name</span><span class="crayon-o">=</span><span class="crayon-s">"szzz"</span><span class="crayon-o">&gt;</span><span class="crayon-e">Children </span><span class="crayon-e">node </span><span class="crayon-v">content</span><span class="crayon-sy">.</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">Hello</span><span class="crayon-o">&gt;</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4c488269062-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementById</span><span class="crayon-sy">(</span><span class="crayon-s">'content'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4c488269062-15"><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-o">&lt;</span><span class="crayon-v">br</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0017 seconds] -->
+<p>&nbsp;</p>
+<p><strong>加载 JSON 数据</strong></p>
+<p>通过函数式编程的 map() 函数，遍历数组</p>
+<p>声明 key 属性为 React 所要求：每个子元素都要有，不然出现 error</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdc4e394200388" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+var books = [
+    {id: 1, name: "Code Complate 2"},
+    {id: 2, name: "Thinking in Java"}
+];
+var Hello = React.createClass({
+    render: function() {	
+        return (
+            &lt;div&gt;          
+                {this.props.data.map(function(book, index) {
+    		    return (
+    			&lt;li key={index}&gt;
+    			    {book.id} {book.name}
+    			&lt;/li&gt;
+    		    );
+    		})}  
+            &lt;/div&gt; 
+        );
+    }
+});
+ReactDOM.render(
+    &lt;Hello data={books} /&gt;,
+    document.getElementById('content')
+);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-4">4</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-6">6</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-8">8</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-10">10</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-12">12</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-14">14</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-16">16</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-18">18</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-20">20</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc4e394200388-22">22</div><div class="crayon-num" data-line="crayon-61a4c79fcdc4e394200388-23">23</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-1">var<span class="crayon-h"> </span>books<span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span>id<span class="crayon-o">:</span><span class="crayon-h"> </span>1<span class="crayon-sy">,</span><span class="crayon-h"> </span>name<span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">"Code Complate 2"</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span>id<span class="crayon-o">:</span><span class="crayon-h"> </span>2<span class="crayon-sy">,</span><span class="crayon-h"> </span>name<span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">"Thinking in Java"</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-4"><span class="crayon-sy">]</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-5">var<span class="crayon-h"> </span>Hello<span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span>React<span class="crayon-sy">.</span>createClass<span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span>render<span class="crayon-o">:</span><span class="crayon-h"> </span>function<span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h">	</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>return<span class="crayon-h"> </span><span class="crayon-sy">(</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div&gt;</span><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.data.map(function(book, index) {</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;		&nbsp;&nbsp;&nbsp;&nbsp;return (</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;			</span><span class="crayon-r ">&lt;li </span>key<span class="crayon-o">=</span><span class="crayon-sy">{</span>index<span class="crayon-sy">}</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;			&nbsp;&nbsp;&nbsp;&nbsp;{book.id} {book.name}</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;			</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;		&nbsp;&nbsp;&nbsp;&nbsp;);</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;		})}&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/div&gt;</span><span class="crayon-i "> </span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-19"><span class="crayon-i ">});</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-20"><span class="crayon-i ">ReactDOM.render(</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-21"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;Hello </span>data<span class="crayon-o">=</span><span class="crayon-sy">{</span>books<span class="crayon-sy">}</span><span class="crayon-r "> /&gt;</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc4e394200388-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span>document<span class="crayon-sy">.</span>getElementById<span class="crayon-sy">(</span><span class="crayon-s ">'content'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-61a4c79fcdc4e394200388-23"><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0010 seconds] -->
+<p>&nbsp;</p>
+<h2>JSX</h2>
+<p>JSX 本质上是 JavaScript 的语法转换，可创建语义丰富的标签</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdc51080857326" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+//JSX
+var app = &lt;App name="Mike"&gt;Hello&lt;/App&gt;;
+//JS
+var app = React.createElement(App, {name:"Mike"}, 'Hello');</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdc51080857326-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc51080857326-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdc51080857326-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc51080857326-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdc51080857326-1"><span class="crayon-c">//JSX</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc51080857326-2"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-e">App </span><span class="crayon-r">name</span><span class="crayon-o">=</span><span class="crayon-s">"Mike"</span><span class="crayon-o">&gt;</span><span class="crayon-v">Hello</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">App</span><span class="crayon-o">&gt;</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-61a4c79fcdc51080857326-3"><span class="crayon-c">//JS</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc51080857326-4"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">React</span><span class="crayon-sy">.</span><span class="crayon-e">createElement</span><span class="crayon-sy">(</span><span class="crayon-v">App</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-s">"Mike"</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Hello'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>一些关注点：</p>
+<ul>
+<li>JSX 用小写字母开头的标签名渲染 HTML 标签（字符串），大写字母开头的标签名渲染 React 组件（类）</li>
+<li>{ } 中使用 condition ? true-branch : false-branch 三目运算符 ，实现 if-else 结构</li>
+<li>{ } 中使用 &amp;&amp; 运算符，当前操作数为 true 输出后操作数</li>
+<li>事件 onChange、onClick</li>
+<li>特殊属性
+<ul>
+<li>key，用于调整组件位置</li>
+<li>ref，引用子组件</li>
+<li>dangerouslySetInnerHTML</li>
+<li>htmlFor</li>
+<li>className</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>组件生命周期</h2>
+<ul>
+<li>生命周期：实例化、活动期、销毁</li>
+<li>实例化 / 加载：<span style="color: #0000ff;">getDefaultProps</span>、getInitialState、componentWillMount、render、componentMidMount</li>
+<li>活动期 / 更新：componentWillReceiveProps、shouldComponentUpdate、componentWillMount、<span style="color: #0000ff;">render</span>、componentMidMount</li>
+<li>销毁 / 移除：componentWillUnmount</li>
+</ul>
+<p>props 在 getDefaultProps 初始化时传入数据，此后只读，即单向数据流</p>
+<p>state 中存储了视图状态，在组件事件中修改 this.setState() 是改变视图的关键点</p>
+<p>&nbsp;</p>
+<h2>复杂组件</h2>
+<ul>
+<li>复杂组件可由多个简单组件组合而成，这些组件形成了树结构</li>
+<li>大型项目一般从下而上（也可以理解为从内到外、从小到大）实现，便于写测试</li>
+<li>组件的初始数据通过 props 传入，从上到下单向数据流动，</li>
+<li>state 则存储了运行组件时变化的状态值，包括可能被组件的事件处理器改变并触发用户界面更新的数据，如搜索框内输入的文本、当前多选框的选中值</li>
+<li>让尽可能多的组件无状态化</li>
+</ul>
+<p>&nbsp;</p>
+<p>参见组件示例 <a href="javascript:if(confirm(%27https://github.com/reactjs/react-tutorial  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/reactjs/react-tutorial%27" tppabs="https://github.com/reactjs/react-tutorial" target="_blank">https://github.com/reactjs/react-tutorial</a>，其结构</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdc54160512240" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Vim</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+div#content
+  - CommentBox
+    - CommentList
+      - Comment(s)
+    - CommentForm</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdc54160512240-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc54160512240-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdc54160512240-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdc54160512240-4">4</div><div class="crayon-num" data-line="crayon-61a4c79fcdc54160512240-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdc54160512240-1"><span class="crayon-i">div</span><span class="crayon-o">#</span><span class="crayon-i">content</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc54160512240-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">CommentBox</span></div><div class="crayon-line" id="crayon-61a4c79fcdc54160512240-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">CommentList</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdc54160512240-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-e">Comment</span><span class="crayon-sy">(</span><span class="crayon-i">s</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-61a4c79fcdc54160512240-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-i">CommentForm</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>&nbsp;</p>
+<p>propTypes，用于验证传入数据的有效性，通常只用于开发环境</p>
+<p>Mixin，可将通用的功能抽取出来，跨组件共享代码</p>
+<p>&nbsp;</p>
+<h2>用法</h2>
+<p><strong>表单</strong></p>
+<p>&nbsp;</p>
+<p><strong>模态框</strong></p>
+<p>结合 Bootstrap</p>
+<p>&nbsp;</p>
+<p><strong>Ajax 数据加载</strong></p>
+<p>结合 jQuery</p>
+<p>&nbsp;</p>
+<h2>插件 Addon</h2>
+<h2>React Router</h2>
+<p><a href="javascript:if(confirm(%27http://www.ruanyifeng.com/blog/2016/05/react_router.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.ruanyifeng.com/blog/2016/05/react_router.html%27" tppabs="http://www.ruanyifeng.com/blog/2016/05/react_router.html" target="_blank">http://www.ruanyifeng.com/blog/2016/05/react_router.html</a></p>
+<h2>Flux</h2>
+<p><a href="javascript:if(confirm(%27http://facebook.github.io/flux/docs/overview.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://facebook.github.io/flux/docs/overview.html%27" tppabs="http://facebook.github.io/flux/docs/overview.html" target="_blank">http://facebook.github.io/flux/docs/overview.html</a></p>
+<h2>Relux</h2>
+<p>(to be continue&#8230;)</p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-244 post type-post status-publish format-standard hentry category-front-end">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="244.html" tppabs="http://www.xuepub.com/244.html" title="Web 设计简述">Web 设计简述</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-07"><i class="mythemes-icon-calendar"></i>on 2016/05/07</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>设计方法</h2>
+<ul>
+<li>UX，用户体验</li>
+<li>UCD，以用户为中心的设计</li>
+</ul>
+<p>&nbsp;</p>
+<h2>关注点</h2>
+<ul>
+<li>用户研究</li>
+<li>信息架构</li>
+<li>行为设计</li>
+<li>内容</li>
+</ul>
+<p>&nbsp;</p>
+<h2>流程工具</h2>
+<ul>
+<li>Visio</li>
+</ul>
+<p>&nbsp;</p>
+<h2>前端工具</h2>
+<ul>
+<li>Balsamiq Mockups，草图</li>
+<li>Axure RP，原型</li>
+<li>Photoshop，绘图与切图</li>
+<li>Dreamweaver，界面开发</li>
+</ul>
+<p>&nbsp;</p>
+<h2>中文资料</h2>
+<ul>
+<li>《Web信息架构——设计大型网站（第3版）》</li>
+<li>《Web界面设计》</li>
+<li>《高效设计沟通之道（第2版）》</li>
+</ul>
+<p>&nbsp;</p>
+<h2>UX Website List</h2>
+<ul class="itemizedlist">
+<li><a href="javascript:if(confirm(%27http://uxpin.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://uxpin.com/%27" tppabs="http://uxpin.com/" target="_blank">uxpin.com</a></li>
+<li><a href="javascript:if(confirm(%27http://uxmatters.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://uxmatters.com/%27" tppabs="http://uxmatters.com/" target="_blank">uxmatters.com</a></li>
+<li><a href="javascript:if(confirm(%27http://smashingmagazine.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://smashingmagazine.com/%27" tppabs="http://smashingmagazine.com/" target="_blank">smashingmagazine.com</a></li>
+<li><a href="javascript:if(confirm(%27http://usabilitygeek.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://usabilitygeek.com/%27" tppabs="http://usabilitygeek.com/" target="_blank">usabilitygeek.com</a></li>
+<li><a href="javascript:if(confirm(%27http://uxbooth.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://uxbooth.com/%27" tppabs="http://uxbooth.com/" target="_blank">uxbooth.com</a></li>
+<li><a href="javascript:if(confirm(%27http://alistapart.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://alistapart.com/%27" tppabs="http://alistapart.com/" target="_blank">alistapart.com</a></li>
+<li><a href="javascript:if(confirm(%27http://adaptivepath.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://adaptivepath.com/%27" tppabs="http://adaptivepath.com/" target="_blank">adaptivepath.com</a></li>
+<li><a href="javascript:if(confirm(%27http://boxesandarrows.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://boxesandarrows.com/%27" tppabs="http://boxesandarrows.com/" target="_blank">boxesandarrows.com</a></li>
+<li><a href="javascript:if(confirm(%27http://lukew.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://lukew.com/%27" tppabs="http://lukew.com/" target="_blank">lukew.com</a></li>
+<li><a href="javascript:if(confirm(%27http://nngroup.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nngroup.com/%27" tppabs="http://nngroup.com/" target="_blank">nngroup.com</a></li>
+<li><a href="javascript:if(confirm(%27http://tandemseven.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://tandemseven.com/%27" tppabs="http://tandemseven.com/" target="_blank">tandemseven.com</a></li>
+<li><a href="javascript:if(confirm(%27http://usabilityprofessionals.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://usabilityprofessionals.org/%27" tppabs="http://usabilityprofessionals.org/" target="_blank">usabilityprofessionals.org</a></li>
+<li><a href="javascript:if(confirm(%27http://uxmag.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://uxmag.com/%27" tppabs="http://uxmag.com/" target="_blank">uxmag.com</a></li>
+<li><a href="javascript:if(confirm(%27http://cognitive-edge.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://cognitive-edge.com/%27" tppabs="http://cognitive-edge.com/" target="_blank">cognitive-edge.com</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>UCD Website List</h2>
+<ul>
+<li><a href="javascript:if(confirm(%27http://alistapart.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://alistapart.com/%27" tppabs="http://alistapart.com/" target="_blank">alistapart.com</a></li>
+<li><a href="javascript:if(confirm(%27http://abookapart.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://abookapart.com/%27" tppabs="http://abookapart.com/" target="_blank">abookapart.com</a></li>
+<li><a href="javascript:if(confirm(%27http://boxesandarrows.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://boxesandarrows.com/%27" tppabs="http://boxesandarrows.com/" target="_blank">boxesandarrows.com</a></li>
+<li><a href="javascript:if(confirm(%27http://netmagazine.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://netmagazine.com/%27" tppabs="http://netmagazine.com/" target="_blank">netmagazine.com</a></li>
+<li><a href="javascript:if(confirm(%27http://smashingmagazine.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://smashingmagazine.com/%27" tppabs="http://smashingmagazine.com/" target="_blank">smashingmagazine.com</a></li>
+<li><a href="javascript:if(confirm(%27http://useit.com/alertbox  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://useit.com/alertbox%27" tppabs="http://useit.com/alertbox" target="_blank">useit.com/alertbox</a></li>
+<li><a href="javascript:if(confirm(%27http://uxmatters.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://uxmatters.com/%27" tppabs="http://uxmatters.com/" target="_blank">uxmatters.com</a></li>
+</ul>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-157 post type-post status-publish format-standard hentry category-front-end tag-css">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="157.html" tppabs="http://www.xuepub.com/157.html" title="Bootstrap 基础">Bootstrap 基础</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-04-22"><i class="mythemes-icon-calendar"></i>on 2016/04/22</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>推荐阅读</h2>
+<p>Bootstrap 官方中文文档 <a href="javascript:if(confirm(%27http://v3.bootcss.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://v3.bootcss.com/%27" tppabs="http://v3.bootcss.com/" target="_blank">http://v3.bootcss.com/</a></p>
+<p>W3school 相关文档 <a href="javascript:if(confirm(%27http://w3schools.bootcss.com/bootstrap  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://w3schools.bootcss.com/bootstrap%27" tppabs="http://w3schools.bootcss.com/bootstrap" target="_blank">http://w3schools.bootcss.com/bootstrap/</a></p>
+<p>《Bootstrap实战》 中文版</p>
+<p>&nbsp;</p>
+<h2>有效文件</h2>
+<p>bootstrap/<br />
+├── css/<br />
+│ └── bootstrap.min.css<br />
+├── js/<br />
+│ └─── bootstrap.min.js<br />
+├── fonts/</p>
+<p>&nbsp;</p>
+<h2>引入</h2>
+<p>在 &lt;head&gt; 中导入 bootstrap.min.css，注意在自定义 CSS 文件之前；</p>
+<p>在 &lt;body&gt; 结束部分引入  bootstrap.min.js，注意在引入 jquery.min.js 文件之后；</p>
+<p>可以考虑使用 CDN 公共库。</p>
+<p>&nbsp;</p>
+<h2>提供功能</h2>
+<ul>
+<li>各浏览器 reset</li>
+<li>移动优先 responsive design</li>
+<li>栅格系统</li>
+<li>导航栏</li>
+<li>表格和表单样式</li>
+<li>模态框</li>
+<li>标签页</li>
+<li>图片轮播</li>
+<li>响应式图片</li>
+</ul>
+<p>&nbsp;</p>
+<h2>相关组件</h2>
+<ul>
+<li>jQuery（必须使用）</li>
+<li>jQuery UI</li>
+<li>Font Awesome 图标</li>
+</ul>
+<p>&nbsp;</p>
+<h2>使用要点</h2>
+<p><strong>移动优先</strong></p>
+<p>必须使用 Bootstrap 要求的三行 &lt;meta&gt; 以支持各种设备。</p>
+<p>&nbsp;</p>
+<p><strong> js 文件后置引入</strong></p>
+<p>据称在 &lt;body&gt;  的结束部分引入 js 文件能够优化网页加载速度，提升动画效果，业界普遍使用。</p>
+<p>注意这种情况下 DOM 事件的写法，比如无法直接在 HTML 的 button 标签中使用 onclick 事件。</p>
+<p>&nbsp;</p>
+<p><strong>顶部导航 nav</strong></p>
+<p>格式需按 Bootstrap 文档来。</p>
+<p>移动端导航通过下拉式菜单弹出，其位置在 div.navbar-header&gt;button.navbar-toggle.collapsed，注意 button 中 data-target 属性值为 #main-nav，main-nav 为正常界面下主菜单的 id 值，要保证 Bootstrap 的 js 文件和其依赖的 jQuery 文件正常引用。</p>
+<p>二级菜单的写法类似移动端下拉式菜单。</p>
+<p>&nbsp;</p>
+<p><b>响应式  responsive</b></p>
+<p><strong>1. container</strong></p>
+<p>所有网站上的内容，都放到 &lt;div class=&#8221;container&#8221;&gt;&lt;/div&gt; 中，这样页面宽度自动支持响应式设计：</p>
+<ul>
+<li><span style="color: #ff0000;"> lg</span> 大屏幕 x &gt;1200px，1170px container 宽度</li>
+<li><span style="color: #ff0000;">md</span> 中屏幕 992px &lt; x &lt; 1200px，970px container 宽度</li>
+<li><span style="color: #ff0000;">sm</span> 小屏幕 768px &lt; x &lt; 992px，750px container 宽度</li>
+<li><span style="color: #ff0000;">xs</span> 手机屏幕  x &lt; 768px ，auto container 宽度</li>
+</ul>
+<p><strong>2. 显示/隐藏元素</strong></p>
+<p>在class中加入 hidden-xs、hidden-sm、hidden-md、hidden-lg，可分别在不同尺寸页面下隐藏不同元素，其相反作用使用 visible 前缀</p>
+<p><strong>3. row</strong></p>
+<p>当 div 中有多列子块时，使用栅格系统，当栅格列之和 &gt;=12 时，移动浏览器可能产生右侧页面移动的 bug，请小心使用：</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-61a4c79fcdfd4266727033" class="crayon-syntax crayon-theme-github crayon-font-consolas crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 18px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 18px !important;">
+&lt;div class="row"&gt;
+  &lt;div class="col-md-6 col-xs-12"&gt;&lt;/div&gt;
+  &lt;div class="col-md-6 col-xs-12"&gt;&lt;/div&gt;
+&lt;/div&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-61a4c79fcdfd4266727033-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdfd4266727033-2">2</div><div class="crayon-num" data-line="crayon-61a4c79fcdfd4266727033-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-61a4c79fcdfd4266727033-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-61a4c79fcdfd4266727033-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"row"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdfd4266727033-2"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"col-md-6 col-xs-12"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-61a4c79fcdfd4266727033-3"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"col-md-6 col-xs-12"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-61a4c79fcdfd4266727033-4"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p>&nbsp;</p>
+<p>（待续）</p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-74 post type-post status-publish format-standard has-post-thumbnail hentry category-front-end category-course tag-javascript">
+
+                        <!-- the post thumbnail wrapper -->
+                <div class="post-thumbnail overflow-wrapper">
+                    <img width="1140" height="284" src="htmlcssjs-1140x284.jpg" tppabs="http://www.xuepub.com/wp-content/uploads/2016/04/htmlcssjs-1140x284.jpg" class="img-background effect-scale wp-post-image" alt="2015秋《前端开发》课件" srcset="http://www.xuepub.com/wp-content/uploads/2016/04/htmlcssjs.jpg 1140w, http://www.xuepub.com/wp-content/uploads/2016/04/htmlcssjs-300x75.jpg 300w, http://www.xuepub.com/wp-content/uploads/2016/04/htmlcssjs-768x191.jpg 768w, http://www.xuepub.com/wp-content/uploads/2016/04/htmlcssjs-1024x255.jpg 1024w" sizes="(max-width: 1140px) 100vw, 1140px" />
+                    <!-- the post thumbnail permalink ( go to single post ) -->
+                    <a href="74.html" tppabs="http://www.xuepub.com/74.html" class="valign-cell-wrapper" title="2015秋《前端开发》课件">
+                    </a>
+
+
+                                    </div><!-- .post-thumbnail -->
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="74.html" tppabs="http://www.xuepub.com/74.html" title="2015秋《前端开发》课件">2015秋《前端开发》课件</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-01-01"><i class="mythemes-icon-calendar"></i>on 2016/01/01</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" rel="category tag">前端</a></li>
+	<li><a href="course.htm" tppabs="http://www.xuepub.com/category/course" rel="category tag">课程</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="szzz.htm" tppabs="http://www.xuepub.com/author/szzz" title="written by szzz">
+                <i class="mythemes-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>课件下载</h2>
+<p><a href="javascript:if(confirm(%27http://pan.baidu.com/s/1slVANmd  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://pan.baidu.com/s/1slVANmd%27" tppabs="http://pan.baidu.com/s/1slVANmd" target="_blank">http://pan.baidu.com/s/1slVANmd</a></p>
+<p>&nbsp;</p>
+<h2>课件说明</h2>
+<p>翻译自 Telerik 2014 年前端开发多项课程，Telerik 开发了著名的商业界面库 Kendo UI HTML Framework，</p>
+<p>本课件几乎全面介绍了 HTML CSS 以及 JS 的全部知识点，并在讲解 JS 基础时考虑到了学生的 C# 背景。</p>
+<p>&nbsp;</p>
+<p> <a href="74.html#more-74" tppabs="http://www.xuepub.com/74.html#more-74" class="more-link"><span class="hide-on-small-only">Read More</span><span class="hide-on-med-and-up">&rarr;</span></a></p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article></section>
+
+<aside class="col s12 m12 l3 mythemes-sidebar sidebar-to-right"><div id="search-3" class="widget widget_search">
+<!-- search form -->
+<form action="http://www.xuepub.com/" method="get" id="searchform">
+    <fieldset>
+        <div id="searchbox">
+
+        	<!-- search input -->
+            <input type="text" name="s"  id="keywords" value="type here..." onfocus="if (this.value == 'type here...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'type here...';}">
+
+            <!-- search button -->
+            <button type="submit" class="waves-effect waves-light btn green">
+
+            	<!-- button search icon -->
+            	<i class="mythemes-icon-search-5"></i></button>
+        </div>
+    </fieldset>
+</form></div><div id="categories-2" class="widget widget_categories"><h4 class="widget-title">分类目录</h4>		<ul>
+	<li class="cat-item cat-item-3 current-cat"><a href="front-end.htm" tppabs="http://www.xuepub.com/category/front-end" >前端</a> (7)
+</li>
+	<li class="cat-item cat-item-4"><a href="back-end.htm" tppabs="http://www.xuepub.com/category/back-end" >后端</a> (17)
+<ul class='children'>
+	<li class="cat-item cat-item-16"><a href="dev.htm" tppabs="http://www.xuepub.com/category/back-end/dev" >开发</a> (12)
+</li>
+	<li class="cat-item cat-item-14"><a href="ops.htm" tppabs="http://www.xuepub.com/category/back-end/ops" >运维</a> (5)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-5"><a href="app.htm" tppabs="http://www.xuepub.com/category/app" >应用</a> (9)
+</li>
+	<li class="cat-item cat-item-7"><a href="course.htm" tppabs="http://www.xuepub.com/category/course" >课程</a> (3)
+</li>
+		</ul>
+</div><div id="tag_cloud-4" class="widget widget_tag_cloud"><h4 class="widget-title">标签</h4><div class="tagcloud"><a href="agile.htm" tppabs="http://www.xuepub.com/tag/agile" class='tag-link-20 tag-link-position-1' title='2个话题' style='font-size: 12.581818181818pt;'>Agile</a>
+<a href="c.htm" tppabs="http://www.xuepub.com/tag/c" class='tag-link-8 tag-link-position-2' title='1个话题' style='font-size: 8pt;'>C#</a>
+<a href="css.htm" tppabs="http://www.xuepub.com/tag/css" class='tag-link-17 tag-link-position-3' title='1个话题' style='font-size: 8pt;'>CSS</a>
+<a href="java.htm" tppabs="http://www.xuepub.com/tag/java" class='tag-link-19 tag-link-position-4' title='6个话题' style='font-size: 22pt;'>Java</a>
+<a href="javascript.htm" tppabs="http://www.xuepub.com/tag/javascript" class='tag-link-18 tag-link-position-5' title='3个话题' style='font-size: 15.636363636364pt;'>JavaScript</a>
+<a href="mobile.htm" tppabs="http://www.xuepub.com/tag/mobile" class='tag-link-21 tag-link-position-6' title='1个话题' style='font-size: 8pt;'>Mobile</a>
+<a href="php.htm" tppabs="http://www.xuepub.com/tag/php" class='tag-link-9 tag-link-position-7' title='3个话题' style='font-size: 15.636363636364pt;'>PHP</a>
+<a href="python.htm" tppabs="http://www.xuepub.com/tag/python" class='tag-link-13 tag-link-position-8' title='2个话题' style='font-size: 12.581818181818pt;'>Python</a>
+<a href="wordpress.htm" tppabs="http://www.xuepub.com/tag/wordpress" class='tag-link-10 tag-link-position-9' title='3个话题' style='font-size: 15.636363636364pt;'>WordPress</a></div>
+</div><div id="archives-2" class="widget widget_archive"><h4 class="widget-title">文章归档</h4>		<ul>
+			<li><a href="10.htm" tppabs="http://www.xuepub.com/date/2017/10">2017年十月</a>&nbsp;(1)</li>
+	<li><a href="01.htm" tppabs="http://www.xuepub.com/date/2017/01">2017年一月</a>&nbsp;(1)</li>
+	<li><a href="06.htm" tppabs="http://www.xuepub.com/date/2016/06">2016年六月</a>&nbsp;(9)</li>
+	<li><a href="05.htm" tppabs="http://www.xuepub.com/date/2016/05">2016年五月</a>&nbsp;(8)</li>
+	<li><a href="04.htm" tppabs="http://www.xuepub.com/date/2016/04">2016年四月</a>&nbsp;(9)</li>
+	<li><a href="03.htm" tppabs="http://www.xuepub.com/date/2016/03">2016年三月</a>&nbsp;(5)</li>
+	<li><a href="01-1.htm" tppabs="http://www.xuepub.com/date/2016/01">2016年一月</a>&nbsp;(1)</li>
+	<li><a href="07.htm" tppabs="http://www.xuepub.com/date/2015/07">2015年七月</a>&nbsp;(1)</li>
+		</ul>
+		</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widget-title">近期文章</h4>		<ul>
+					<li>
+				<a href="563.html" tppabs="http://www.xuepub.com/563.html">数据分析</a>
+							<span class="post-date">2017/10/09</span>
+						</li>
+					<li>
+				<a href="536.html" tppabs="http://www.xuepub.com/536.html">AngularJS 实践心得</a>
+							<span class="post-date">2017/01/02</span>
+						</li>
+					<li>
+				<a href="521.html" tppabs="http://www.xuepub.com/521.html">用户故事简述</a>
+							<span class="post-date">2016/06/24</span>
+						</li>
+					<li>
+				<a href="507.html" tppabs="http://www.xuepub.com/507.html">Docker 基础</a>
+							<span class="post-date">2016/06/20</span>
+						</li>
+					<li>
+				<a href="502.html" tppabs="http://www.xuepub.com/502.html">Ionic 简述</a>
+							<span class="post-date">2016/06/17</span>
+						</li>
+					<li>
+				<a href="490.html" tppabs="http://www.xuepub.com/490.html">AngularJS 1 学习</a>
+							<span class="post-date">2016/06/15</span>
+						</li>
+					<li>
+				<a href="470.html" tppabs="http://www.xuepub.com/470.html">JHipster 简述</a>
+							<span class="post-date">2016/06/13</span>
+						</li>
+					<li>
+				<a href="449.html" tppabs="http://www.xuepub.com/449.html">React 基础</a>
+							<span class="post-date">2016/06/08</span>
+						</li>
+				</ul>
+		</div>		</aside>
+            </div>
+        </div><!-- .container -->
+    </div><!-- .content -->
+
+
+        <footer>
+                                <!-- footer sidebars -->
+                    <aside class="mythemes-footer-sidebars">
+
+                        <!-- the sidebars container ( align to center ) -->
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- first footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-2" class="widget widget_text"><h5>服务器</h5>			<div class="textwidget">San Francisco<br>
+Digital Ocean</div>
+		</div>                                </div>
+
+                                <!-- second footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-3" class="widget widget_text"><h5>运维</h5>			<div class="textwidget">szzz</div>
+		</div>                                </div>
+
+                                <!-- third footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-4" class="widget widget_text"><h5>联系方式</h5>			<div class="textwidget">xuepub@126.com</div>
+		</div>                                </div>
+
+                                <!-- fourth footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="text-5" class="widget widget_text"><h5>赞助</h5>			<div class="textwidget">No thanks.</div>
+		</div>                                </div>
+
+                            </div>
+                        </div><!-- .container -->
+                    </aside><!-- .mythemes-footer-sidebars -->
+            
+            <!-- dark mask social and copyright wrapper -->
+            <div class="mythemes-dark-mask">
+
+                
+                
+                <!-- copyright -->
+                <div class="mythemes-copyright">
+
+                    <!-- copyright container ( align to center ) -->
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col s12">
+                                <p>
+
+                                    
+                                    <span class="copyright">Copyright © 2016.</span>
+                                    
+                                    
+                                    <span>Designed by <a href="javascript:if(confirm(%27http://mythem.es/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://mythem.es/%27" tppabs="http://mythem.es/" target="_blank" title="myThem.es" class="mythemes">myThem.es</a>.</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div><!-- .container -->
+                </div><!-- .mythemes-copyright -->
+            </div>
+
+        </footer>
+
+        <script type='text/javascript' src="imagesloaded.min.js-ver=3.2.0.js" tppabs="http://www.xuepub.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0"></script>
+<script type='text/javascript' src="masonry.min.js-ver=3.3.2.js" tppabs="http://www.xuepub.com/wp-includes/js/masonry.min.js?ver=3.3.2"></script>
+<script type='text/javascript' src="functions.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/functions.js?ver=0.0.16"></script>
+<script type='text/javascript' src="materialize.min.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/materialize.min.js?ver=0.0.16"></script>
+<script type='text/javascript' src="jquery.prettyPhoto.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.js?ver=0.0.16"></script>
+<script type='text/javascript' src="jquery.prettyPhoto.settings.js-ver=0.0.16.js" tppabs="http://www.xuepub.com/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.settings.js?ver=0.0.16"></script>
+<script type='text/javascript' src="wp-embed.min.js-ver=4.7.3.js" tppabs="http://www.xuepub.com/wp-includes/js/wp-embed.min.js?ver=4.7.3"></script>
+
+    </body>
+</html>
