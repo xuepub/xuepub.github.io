@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+                        <link rel="pingback" href="http://localhost/xuepub/xmlrpc.php">
+        
+        <title>Python 应用 &#8211; 学吧</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; Feed" href="http://localhost/xuepub/feed/" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; 评论Feed" href="http://localhost/xuepub/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; Python 应用评论Feed" href="http://localhost/xuepub/2016/04/14/python-%e5%ba%94%e7%94%a8/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/xuepub\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='materialize-google-font-1-css'  href="css-family=Poiret+One&ver=0.0.21" tppabs="http://fonts.googleapis.com/css?family=Poiret+One&ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-2-css'  href="css-family=Raleway-400,100,200,300,500,600,700,800,900&ver=0.0.21" tppabs="http://fonts.googleapis.com/css?family=Raleway%3A400%2C100%2C200%2C300%2C500%2C600%2C700%2C800%2C900&ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-3-css'  href="css-family=Open+Sans-300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese&ver=0.0.21" tppabs="http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C600%2C700%2C800%2C300&subset=latin%2Ccyrillic-ext%2Clatin-ext%2Ccyrillic%2Cgreek-ext%2Cgreek%2Cvietnamese&ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='fontello-css'  href="fontello.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/css/fontello.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-effects-css'  href="effects.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/effects.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-header-css'  href="header.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/header.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-materialize-css'  href="materialize.min.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/materialize.min.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-typography-css'  href="typography.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/typography.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-navigation-css'  href="navigation.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/navigation.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-nav-css'  href="nav.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/nav.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-blog-css'  href="blog.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/blog.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-forms-css'  href="forms.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/forms.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-elements-css'  href="elements.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/elements.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-widgets-css'  href="widgets.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/widgets.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-css'  href="comments.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/comments.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-typography-css'  href="comments-typography.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/comments-typography.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-footer-css'  href="footer.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/footer.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-pretty-photo-css'  href="prettyPhoto.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/prettyPhoto.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-plugins-css'  href="plugins.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/plugins.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-style-css'  href="style.css-ver=5.8.2" tppabs="http://localhost/xuepub/wp-content/themes/materialize/style.css?ver=5.8.2" type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='materialize-ie-css'  href="ie.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/ie.css?ver=0.0.21" type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='wp-block-library-css'  href="style.min.css-ver=5.8.2" tppabs="http://localhost/xuepub/wp-includes/css/dist/block-library/style.min.css?ver=5.8.2" type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href="default.min.css-ver=1.14" tppabs="http://localhost/xuepub/wp-content/plugins/tablepress/css/default.min.css?ver=1.14" type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src="respond.min.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/respond.min.js?ver=0.0.21" id='respond-js'></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src="html5shiv.min.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/html5shiv.min.js?ver=0.0.21" id='html5shiv-js'></script>
+<![endif]-->
+<script type='text/javascript' src="jquery.min.js-ver=3.6.0" tppabs="http://localhost/xuepub/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id='jquery-core-js'></script>
+<script type='text/javascript' src="jquery-migrate.min.js-ver=3.3.2" tppabs="http://localhost/xuepub/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="http://localhost/xuepub/wp-json/" /><link rel="alternate" type="application/json" href="http://localhost/xuepub/wp-json/wp/v2/posts/124" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/xuepub/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/xuepub/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.2" />
+<link rel="canonical" href="http://localhost/xuepub/2016/04/14/python-%e5%ba%94%e7%94%a8/" />
+<link rel='shortlink' href='http://localhost/xuepub/?p=124' />
+<link rel="alternate" type="application/json+oembed" href="http://localhost/xuepub/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fxuepub%2F2016%2F04%2F14%2Fpython-%25e5%25ba%2594%25e7%2594%25a8%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://localhost/xuepub/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fxuepub%2F2016%2F04%2F14%2Fpython-%25e5%25ba%2594%25e7%2594%25a8%2F&#038;format=xml" />
+<!--[if IE]>
+	<style type="text/css" id="tempo-custom-css-ie">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 11]>
+	<style type="text/css" id="tempo-custom-css-ie-11">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 10]>
+	<style type="text/css" id="tempo-custom-css-ie-10">
+			</style>
+<![endif]-->
+
+<!--[if IE 9]>
+	<style type="text/css" id="tempo-custom-css-ie-9">
+			</style>
+<![endif]-->
+
+<!--[if IE 8]>
+	<style type="text/css" id="tempo-custom-css-ie-8">
+			</style>
+<![endif]-->
+
+<style type="text/css">
+
+    /* header color */
+    body{
+        background-color: #ffffff;
+    }
+
+    /* background image */
+    body > div.content{
+            }
+</style>
+
+<style type="text/css" id="mythemes-breadcrumbs-space">
+        /* breadcrumbs space */
+    div.mythemes-page-header{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+            @media ( max-width: 991px ){
+            div.mythemes-page-header{
+                padding-top: 52px;
+                padding-bottom: 52px;
+            }
+        }
+    
+            @media ( max-width: 767px ){
+            div.mythemes-page-header{
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+    
+            @media ( max-width: 540px ){
+            div.mythemes-page-header{
+                padding-top: 28px;
+                padding-bottom: 28px;
+            }
+        }
+    
+            @media ( max-width: 480px ){
+            div.mythemes-page-header{
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    </style>
+
+<!-- colors options / background color -->
+<style type="text/css" id="mythemes-background-color">
+    body > div.content{
+        background-color: #f5f5f5;
+    }
+</style>
+
+<!-- header options -->
+<!-- header content -->
+<!-- header content headline color -->
+<style type="text/css" id="mythemes-header-headline-color" media="all">
+    div.mythemes-header a.header-headline{
+        color: #e53932    }
+</style>
+
+<!-- header content description color and description hover color -->
+<style type="text/css" id="mythemes-header-description-color" media="all">
+
+    
+    div.mythemes-header a.header-description{
+        color: rgba( 0,0,0, 0.55 );
+    }
+    div.mythemes-header a.header-description:hover{
+        color: rgba( 0,0,0, 1.0 );
+    }
+</style>
+
+<!-- header buttons -->
+<!-- header first button -->
+<!-- header first button text color -->
+<style type="text/css" id="mythemes-header-btn-1-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header first button background color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        background-color: #4caf50;
+    }
+</style>
+
+<!-- header first button background hover color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button:hover{
+        background-color: #43a047;
+    }
+</style>
+
+<!-- header second button -->
+<!-- header second button text color -->
+<style type="text/css" id="mythemes-header-btn-2-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header second button background color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        background-color: #e53935;
+    }
+</style>
+
+<!-- header second button background hover color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button:hover{
+        background-color: #d32f2f;
+    }
+</style>
+		<style type="text/css" id="wp-custom-css">
+			/*
+您可以在此处加入您的CSS。
+
+点击上方的帮助图标来了解更多。
+*/
+
+.mythemes-classic .post-thumbnail:hover {
+    background-color: rgba( 0, 0, 0, 0 );
+}		</style>
+		    </head>
+    <body class="post-template-default single single-post postid-124 single-format-standard wp-custom-logo">
+
+        
+
+        
+        <header class="mythemes-miss-header-image">
+
+            <!-- header navigation -->
+            <nav class="white mythemes-topper" role="navigation">
+                <div class="nav-wrapper container">
+
+                    <!-- header button -->
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="materialize-icon-menu"></i></a>
+
+                    <!-- Site Logo, Title and Description -->
+                    <div class="mythemes-blog-identity"><div class="mythemes-blog-logo" style="margin-top: 0px; margin-bottom: 0px;"><a href="index.htm" tppabs="http://localhost/xuepub/" class="custom-logo-link" rel="home"><img width="162" height="60" src="logo-1.png" tppabs="http://localhost/xuepub/wp-content/uploads/2016/04/logo-1.png" class="custom-logo" alt="学吧" /></a></div><a class="mythemes-blog-title" href="index.htm" tppabs="http://localhost/xuepub/" title="学吧 - ">学吧</a></div><div class="not-collapsed-wrapper"><ul id="menu-main" class="right hide-on-med-and-down"><li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-10"><a href="index.htm" tppabs="http://localhost/xuepub/">首页</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="index-1.htm" tppabs="http://localhost/xuepub/category/front-end/">前端</a></li>
+<li id="menu-item-605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-605"><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/">后端</a>
+<ul class="sub-menu">
+	<li id="menu-item-610" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-610"><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/">开发</a></li>
+	<li id="menu-item-609" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-609"><a href="index-4.htm" tppabs="http://localhost/xuepub/category/back-end/ops/">运维</a></li>
+</ul>
+</li>
+<li id="menu-item-607" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-607"><a href="index-5.htm" tppabs="http://localhost/xuepub/category/app/">应用</a></li>
+<li id="menu-item-608" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-608"><a href="index-6.htm" tppabs="http://localhost/xuepub/category/course/">课程</a></li>
+</ul></div><div class="collapsed-wrapper"><ul id="nav-mobile" class="side-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-10"><a href="index.htm" tppabs="http://localhost/xuepub/">首页</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="index-1.htm" tppabs="http://localhost/xuepub/category/front-end/">前端</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-605"><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/">后端</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-610"><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/">开发</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-609"><a href="index-4.htm" tppabs="http://localhost/xuepub/category/back-end/ops/">运维</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-607"><a href="index-5.htm" tppabs="http://localhost/xuepub/category/app/">应用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-608"><a href="index-6.htm" tppabs="http://localhost/xuepub/category/course/">课程</a></li>
+</ul></div>                </div>
+            </nav>
+
+            <!-- the header image and the header elements -->
+            
+        </header>
+
+                <!-- the breadcrumbs content -->
+            <div class="mythemes-page-header">
+
+                <!-- the breadcrumbs container ( align to center ) -->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col s12">
+
+                            <!-- the breadcrumbs navigation path -->
+                            <nav class="mythemes-navigation">
+                              <ul>
+
+                                <!-- the home link -->
+                                <li id="home-label"><a href="index.htm" tppabs="http://localhost/xuepub/" title="go to home"><i class="materialize-icon-home"></i> <span>Home</span></a></li>
+                                <!-- the post categories ( hierarchical path ) -->
+                                <li><a href="index-5.htm" tppabs="http://localhost/xuepub/category/app/" title="See articles from category - 应用">应用</a></li>
+                                <!-- the last arrow from path -->
+                                <li></li>
+
+                              </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+
+    <!--  the content -->
+    <div class="content">
+
+        <!--  the container ( align to center ) -->
+        <div class="container">
+            <div class="row">
+
+                            <!-- the post -->
+                <section class="col s12 m12 l9 mythemes-classic">
+
+                                            <article class="post-124 post type-post status-publish format-standard hentry category-app tag-python">
+
+                                
+                                <!-- the post title -->
+                                <h1 class="post-title">Python 应用</h1>
+
+                                <!-- the post top meta: author / time / comments -->
+                                        <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-04-14"><i class="materialize-icon-calendar"></i>on 2016年4月14日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-5.htm" tppabs="http://localhost/xuepub/category/app/" rel="category tag">应用</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+                                <!-- the post content wrapper -->
+                                <div class="post-content">
+
+                                    <!-- the post content -->
+                                    <p><img loading="lazy" class="alignnone size-full wp-image-125" style="background-color: #2b5b84;" src="python-logo-1.png" tppabs="http://localhost/xuepub/wp-content/uploads/2016/04/python-logo-1.png" alt="python-logo" width="290" height="82" /></p>
+<p>本文翻译自 Python 官网</p>
+<p><a href="javascript:if(confirm(%27http://pypi.python.org/pypi  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://pypi.python.org/pypi%27" tppabs="http://pypi.python.org/pypi" target="_blank" rel="noopener">Python Package Index</a> 包索引列表，有大量的第三方模块</p>
+<p><span id="more-124"></span></p>
+<div id="web-and-internet-development">
+<h1>Web 和互联网开发</h1>
+<p><a href="javascript:if(confirm(%27http://wiki.python.org/moin/WebProgramming  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.python.org/moin/WebProgramming%27" tppabs="http://wiki.python.org/moin/WebProgramming" target="_blank" rel="noopener">Web 开发</a>：</p>
+<ul>
+<li>框架 <a href="javascript:if(confirm(%27http://www.djangoproject.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.djangoproject.com/%27" tppabs="http://www.djangoproject.com/" target="_blank" rel="noopener">Django</a> <a href="javascript:if(confirm(%27http://www.pylonsproject.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.pylonsproject.org/%27" tppabs="http://www.pylonsproject.org/" target="_blank" rel="noopener">Pyramid</a></li>
+<li>微框架 <a href="javascript:if(confirm(%27http://flask.pocoo.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://flask.pocoo.org/%27" tppabs="http://flask.pocoo.org/" target="_blank" rel="noopener">Flask</a> <a href="javascript:if(confirm(%27http://bottlepy.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://bottlepy.org/%27" tppabs="http://bottlepy.org/" target="_blank" rel="noopener">Bottle</a></li>
+<li>内容管理系统 <a href="javascript:if(confirm(%27http://www.plone.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.plone.org/%27" tppabs="http://www.plone.org/" target="_blank" rel="noopener">Plone</a> <a href="javascript:if(confirm(%27https://www.django-cms.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://www.django-cms.org/%27" tppabs="https://www.django-cms.org/" target="_blank" rel="noopener">django CMS</a></li>
+</ul>
+<p>Python 标准库支持大量协议</p>
+<ul>
+<li><a href="javascript:if(confirm(%27http://docs.python.org/library/markup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/library/markup%27" tppabs="http://docs.python.org/library/markup" target="_blank" rel="noopener">HTML and XML</a></li>
+<li><a href="javascript:if(confirm(%27http://docs.python.org/library/json.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/library/json.html%27" tppabs="http://docs.python.org/library/json.html" target="_blank" rel="noopener">JSON</a></li>
+<li><a href="javascript:if(confirm(%27http://docs.python.org/library/email  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/library/email%27" tppabs="http://docs.python.org/library/email" target="_blank" rel="noopener">E-mail processing</a></li>
+<li><a href="javascript:if(confirm(%27http://docs.python.org/library/ftplib.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/library/ftplib.html%27" tppabs="http://docs.python.org/library/ftplib.html" target="_blank" rel="noopener">FTP</a> <a href="javascript:if(confirm(%27http://docs.python.org/2/library/imaplib.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/2/library/imaplib.html%27" tppabs="http://docs.python.org/2/library/imaplib.html" target="_blank" rel="noopener">IMAP</a> 以及其他<a href="javascript:if(confirm(%27http://docs.python.org/library/internet  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/library/internet%27" tppabs="http://docs.python.org/library/internet" target="_blank" rel="noopener">Internet protocols</a></li>
+<li><a href="javascript:if(confirm(%27http://docs.python.org/howto/sockets.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.python.org/howto/sockets.html%27" tppabs="http://docs.python.org/howto/sockets.html" target="_blank" rel="noopener">socket interface</a></li>
+</ul>
+<p>以及：</p>
+<ul>
+<li><a href="javascript:if(confirm(%27https://pypi.python.org/pypi/requests/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://pypi.python.org/pypi/requests/%27" tppabs="https://pypi.python.org/pypi/requests/" target="_blank" rel="noopener">Requests</a> 强大的 HTTP 客户端库</li>
+<li><a href="javascript:if(confirm(%27http://www.crummy.com/software/BeautifulSoup/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.crummy.com/software/BeautifulSoup/%27" tppabs="http://www.crummy.com/software/BeautifulSoup/" target="_blank" rel="noopener">BeautifulSoup</a> HTML 解析器可处理所有古怪的 HTML</li>
+<li><a href="javascript:if(confirm(%27https://pypi.python.org/pypi/feedparser  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://pypi.python.org/pypi/feedparser%27" tppabs="https://pypi.python.org/pypi/feedparser" target="_blank" rel="noopener">Feedparser</a> 用于解析 RSS/Atom 源</li>
+<li><a href="javascript:if(confirm(%27https://pypi.python.org/pypi/paramiko/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://pypi.python.org/pypi/paramiko/%27" tppabs="https://pypi.python.org/pypi/paramiko/" target="_blank" rel="noopener">Paramiko</a> 实现 SSH2 协议</li>
+<li><a href="javascript:if(confirm(%27http://twistedmatrix.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://twistedmatrix.com/%27" tppabs="http://twistedmatrix.com/" target="_blank" rel="noopener">Twisted Python</a> 异步网络编程框架</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+<div id="scientific-and-numeric">
+<h1>科学和数值计算</h1>
+<p>Python 广泛的用于 <a href="javascript:if(confirm(%27http://wiki.python.org/moin/NumericAndScientific  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.python.org/moin/NumericAndScientific%27" tppabs="http://wiki.python.org/moin/NumericAndScientific" target="_blank" rel="noopener">scientific and numeric</a> 计算：</p>
+<ul>
+<li><a href="javascript:if(confirm(%27http://scipy.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://scipy.org/%27" tppabs="http://scipy.org/" target="_blank" rel="noopener">SciPy</a> 是数学科学和工程集成包</li>
+<li><a href="javascript:if(confirm(%27http://pandas.pydata.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://pandas.pydata.org/%27" tppabs="http://pandas.pydata.org/" target="_blank" rel="noopener">Pandas</a> 是数据分析和建模库</li>
+<li><a href="javascript:if(confirm(%27http://ipython.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://ipython.org/%27" tppabs="http://ipython.org/" target="_blank" rel="noopener">IPython</a> 强大的交互式环境，易于编辑并记录工作过程，支持虚拟化和并行计算</li>
+<li><a href="javascript:if(confirm(%27http://software-carpentry.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://software-carpentry.org/%27" tppabs="http://software-carpentry.org/" target="_blank" rel="noopener">Software Carpentry Course</a> 上有一些科学计算教程</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+<div id="education">
+<h1>教育</h1>
+<p>Python 是用于教学的超级语言，跨越了入门级和专业级</p>
+<ul>
+<li>参考书  <a href="javascript:if(confirm(%27http://www.openbookproject.net/thinkcs/python/english2e/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.openbookproject.net/thinkcs/python/english2e/%27" tppabs="http://www.openbookproject.net/thinkcs/python/english2e/" target="_blank" rel="noopener">How to Think Like a Computer Scientist</a>, <a href="javascript:if(confirm(%27http://mcsp.wartburg.edu/zelle/python/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://mcsp.wartburg.edu/zelle/python/%27" tppabs="http://mcsp.wartburg.edu/zelle/python/" target="_blank" rel="noopener">Python Programming: An Introduction to Computer Science</a>, <a href="javascript:if(confirm(%27http://pragprog.com/book/gwpy2/practical-programming  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://pragprog.com/book/gwpy2/practical-programming%27" tppabs="http://pragprog.com/book/gwpy2/practical-programming" target="_blank" rel="noopener">Practical Programming</a>.</li>
+<li><a href="javascript:if(confirm(%27https://www.python.org/community/sigs/current/edu-sig  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://www.python.org/community/sigs/current/edu-sig%27" tppabs="https://www.python.org/community/sigs/current/edu-sig" target="_blank" rel="noopener">Education Special Interest Group</a> 是讨论教学的好去处</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+<div id="desktop-guis">
+<h1>桌面 GUIs</h1>
+<p><a href="javascript:if(confirm(%27http://wiki.python.org/moin/TkInter  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.python.org/moin/TkInter%27" tppabs="http://wiki.python.org/moin/TkInter" target="_blank" rel="noopener">Tk</a> GUI 库包含了 Python 最多的二进制发行包</p>
+<p>一些工具在许多平台上可用：</p>
+<ul>
+<li><a href="javascript:if(confirm(%27http://www.wxpython.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.wxpython.org/%27" tppabs="http://www.wxpython.org/" target="_blank" rel="noopener">wxWidgets</a></li>
+<li><a href="javascript:if(confirm(%27http://kivy.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://kivy.org/%27" tppabs="http://kivy.org/" target="_blank" rel="noopener">Kivy</a> 用于写多点触控</li>
+<li>Qt 通过 <a href="javascript:if(confirm(%27http://www.riverbankcomputing.co.uk/software/pyqt/intro  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.riverbankcomputing.co.uk/software/pyqt/intro%27" tppabs="http://www.riverbankcomputing.co.uk/software/pyqt/intro" target="_blank" rel="noopener">pyqt</a> 或 <a href="javascript:if(confirm(%27http://www.pyside.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.pyside.org/%27" tppabs="http://www.pyside.org/" target="_blank" rel="noopener">pyside</a></li>
+</ul>
+<p>特定平台工具：</p>
+<ul>
+<li><a href="javascript:if(confirm(%27http://www.pygtk.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.pygtk.org/%27" tppabs="http://www.pygtk.org/" target="_blank" rel="noopener">GTK+</a></li>
+<li><a href="javascript:if(confirm(%27http://sourceforge.net/projects/pywin32/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://sourceforge.net/projects/pywin32/%27" tppabs="http://sourceforge.net/projects/pywin32/" target="_blank" rel="noopener">win32 extensions</a></li>
+</ul>
+<p>&nbsp;</p>
+</div>
+<div id="software-development">
+<h1>软件开发</h1>
+<p>Python 常用于软件开发者的支持语言，用于构建控制和管理</p>
+<ul>
+<li><a href="javascript:if(confirm(%27http://www.scons.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.scons.org/%27" tppabs="http://www.scons.org/" target="_blank" rel="noopener">SCons</a> 用于构建控制</li>
+<li><a href="javascript:if(confirm(%27http://buildbot.sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://buildbot.sourceforge.net/%27" tppabs="http://buildbot.sourceforge.net/" target="_blank" rel="noopener">Buildbot</a> 和 <a href="javascript:if(confirm(%27http://gump.apache.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://gump.apache.org/%27" tppabs="http://gump.apache.org/" target="_blank" rel="noopener">Apache Gump</a> 用于自动化持续编译和测试</li>
+<li><a href="javascript:if(confirm(%27http://roundup.sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://roundup.sourceforge.net/%27" tppabs="http://roundup.sourceforge.net/" target="_blank" rel="noopener">Roundup</a> 或 <a href="javascript:if(confirm(%27http://www.edgewall.com/trac/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.edgewall.com/trac/%27" tppabs="http://www.edgewall.com/trac/" target="_blank" rel="noopener">Trac</a> 用于 bug 追踪管理</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                            </article>
+
+                            
+                            	        <div class="post-meta-terms">
+	            <div class="post-meta-tags">
+
+	                <span class="mythemes-btn"><i class="materialize-icon-tags"></i></span>
+	                <a href="index-66.htm" tppabs="http://localhost/xuepub/tag/python/" rel="tag">Python</a>
+	                <div class="clear clearfix"></div>
+	            </div><!-- .post-meta-tags -->
+	        </div><!-- .post-meta-terms -->
+
+                            <!-- the post comments -->
+                            
+                
+                </section>
+
+            <aside class="col s12 m12 l3 mythemes-sidebar sidebar-to-right"></aside>
+            </div>
+        </div><!-- .container -->
+    </div><!-- .content -->
+
+
+        <footer>
+                                <!-- footer sidebars -->
+                    <aside class="mythemes-footer-sidebars">
+
+                        <!-- the sidebars container ( align to center ) -->
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- first footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="block-5" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div><div id="block-6" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div>                                </div>
+
+                                <!-- second footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                                                    </div>
+
+                                <!-- third footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                                                    </div>
+
+                                <!-- fourth footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                                                    </div>
+
+                            </div>
+                        </div><!-- .container -->
+                    </aside><!-- .mythemes-footer-sidebars -->
+            
+            <!-- dark mask social and copyright wrapper -->
+            <div class="mythemes-dark-mask">
+
+                
+                <!-- copyright -->
+                <div class="mythemes-copyright">
+
+                    <!-- copyright container ( align to center ) -->
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col s12">
+                                <p>
+
+                                    
+                                    <span class="copyright">Copyright &copy; 2021 学吧. Powered by <a href="javascript:if(confirm(%27http://wordpress.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wordpress.org/%27" tppabs="http://wordpress.org/">WordPress</a>.</span>
+
+                                    
+                                    <span>Designed by <a href="javascript:if(confirm(%27http://mythem.es/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://mythem.es/%27" tppabs="http://mythem.es/" target="_blank" title="myThem.es" class="mythemes">myThem.es</a>.</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div><!-- .container -->
+                </div><!-- .mythemes-copyright -->
+            </div>
+
+        </footer>
+
+        <script type='text/javascript' src="imagesloaded.min.js-ver=4.1.4" tppabs="http://localhost/xuepub/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id='imagesloaded-js'></script>
+<script type='text/javascript' src="masonry.min.js-ver=4.2.2" tppabs="http://localhost/xuepub/wp-includes/js/masonry.min.js?ver=4.2.2" id='masonry-js'></script>
+<script type='text/javascript' src="functions.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/functions.js?ver=0.0.21" id='mythemes-functions-js'></script>
+<script type='text/javascript' src="materialize.min.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/materialize.min.js?ver=0.0.21" id='mythemes-materialize-js'></script>
+<script type='text/javascript' src="jquery.prettyPhoto.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.js?ver=0.0.21" id='mythemes-pretty-photo-js'></script>
+<script type='text/javascript' src="jquery.prettyPhoto.settings.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.settings.js?ver=0.0.21" id='mythemes-pretty-photo-settings-js'></script>
+<script type='text/javascript' src="wp-embed.min.js-ver=5.8.2" tppabs="http://localhost/xuepub/wp-includes/js/wp-embed.min.js?ver=5.8.2" id='wp-embed-js'></script>
+
+    </body>
+</html>

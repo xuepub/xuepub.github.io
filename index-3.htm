@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+        
+        <title>开发 &#8211; 学吧</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; Feed" href="http://localhost/xuepub/feed/" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; 评论Feed" href="http://localhost/xuepub/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="学吧 &raquo; 开发分类Feed" href="http://localhost/xuepub/category/back-end/dev/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/xuepub\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='materialize-google-font-1-css'  href="css-family=Poiret+One&ver=0.0.21" tppabs="http://fonts.googleapis.com/css?family=Poiret+One&ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-2-css'  href="css-family=Raleway-400,100,200,300,500,600,700,800,900&ver=0.0.21" tppabs="http://fonts.googleapis.com/css?family=Raleway%3A400%2C100%2C200%2C300%2C500%2C600%2C700%2C800%2C900&ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='materialize-google-font-3-css'  href="css-family=Open+Sans-300italic,400italic,600italic,700italic,800italic,400,600,700,800,300&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese&ver=0.0.21" tppabs="http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C600%2C700%2C800%2C300&subset=latin%2Ccyrillic-ext%2Clatin-ext%2Ccyrillic%2Cgreek-ext%2Cgreek%2Cvietnamese&ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='fontello-css'  href="fontello.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/css/fontello.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-effects-css'  href="effects.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/effects.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-header-css'  href="header.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/header.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-materialize-css'  href="materialize.min.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/materialize.min.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-typography-css'  href="typography.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/typography.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-navigation-css'  href="navigation.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/navigation.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-nav-css'  href="nav.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/nav.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-blog-css'  href="blog.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/blog.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-forms-css'  href="forms.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/forms.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-elements-css'  href="elements.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/elements.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-widgets-css'  href="widgets.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/widgets.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-css'  href="comments.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/comments.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-comments-typography-css'  href="comments-typography.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/comments-typography.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-footer-css'  href="footer.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/footer.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-pretty-photo-css'  href="prettyPhoto.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/prettyPhoto.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-plugins-css'  href="plugins.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/plugins.css?ver=0.0.21" type='text/css' media='all' />
+<link rel='stylesheet' id='mythemes-style-css'  href="style.css-ver=5.8.2" tppabs="http://localhost/xuepub/wp-content/themes/materialize/style.css?ver=5.8.2" type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='materialize-ie-css'  href="ie.css-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/css/ie.css?ver=0.0.21" type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='wp-block-library-css'  href="style.min.css-ver=5.8.2" tppabs="http://localhost/xuepub/wp-includes/css/dist/block-library/style.min.css?ver=5.8.2" type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href="default.min.css-ver=1.14" tppabs="http://localhost/xuepub/wp-content/plugins/tablepress/css/default.min.css?ver=1.14" type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src="respond.min.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/respond.min.js?ver=0.0.21" id='respond-js'></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src="html5shiv.min.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/html5shiv.min.js?ver=0.0.21" id='html5shiv-js'></script>
+<![endif]-->
+<script type='text/javascript' src="jquery.min.js-ver=3.6.0" tppabs="http://localhost/xuepub/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id='jquery-core-js'></script>
+<script type='text/javascript' src="jquery-migrate.min.js-ver=3.3.2" tppabs="http://localhost/xuepub/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="http://localhost/xuepub/wp-json/" /><link rel="alternate" type="application/json" href="http://localhost/xuepub/wp-json/wp/v2/categories/6" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/xuepub/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/xuepub/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.2" />
+<!--[if IE]>
+	<style type="text/css" id="tempo-custom-css-ie">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 11]>
+	<style type="text/css" id="tempo-custom-css-ie-11">
+			</style>
+<![endif]-->
+
+
+<!--[if IE 10]>
+	<style type="text/css" id="tempo-custom-css-ie-10">
+			</style>
+<![endif]-->
+
+<!--[if IE 9]>
+	<style type="text/css" id="tempo-custom-css-ie-9">
+			</style>
+<![endif]-->
+
+<!--[if IE 8]>
+	<style type="text/css" id="tempo-custom-css-ie-8">
+			</style>
+<![endif]-->
+
+<style type="text/css">
+
+    /* header color */
+    body{
+        background-color: #ffffff;
+    }
+
+    /* background image */
+    body > div.content{
+            }
+</style>
+
+<style type="text/css" id="mythemes-breadcrumbs-space">
+        /* breadcrumbs space */
+    div.mythemes-page-header{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+            @media ( max-width: 991px ){
+            div.mythemes-page-header{
+                padding-top: 52px;
+                padding-bottom: 52px;
+            }
+        }
+    
+            @media ( max-width: 767px ){
+            div.mythemes-page-header{
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+    
+            @media ( max-width: 540px ){
+            div.mythemes-page-header{
+                padding-top: 28px;
+                padding-bottom: 28px;
+            }
+        }
+    
+            @media ( max-width: 480px ){
+            div.mythemes-page-header{
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    </style>
+
+<!-- colors options / background color -->
+<style type="text/css" id="mythemes-background-color">
+    body > div.content{
+        background-color: #f5f5f5;
+    }
+</style>
+
+<!-- header options -->
+<!-- header content -->
+<!-- header content headline color -->
+<style type="text/css" id="mythemes-header-headline-color" media="all">
+    div.mythemes-header a.header-headline{
+        color: #e53932    }
+</style>
+
+<!-- header content description color and description hover color -->
+<style type="text/css" id="mythemes-header-description-color" media="all">
+
+    
+    div.mythemes-header a.header-description{
+        color: rgba( 0,0,0, 0.55 );
+    }
+    div.mythemes-header a.header-description:hover{
+        color: rgba( 0,0,0, 1.0 );
+    }
+</style>
+
+<!-- header buttons -->
+<!-- header first button -->
+<!-- header first button text color -->
+<style type="text/css" id="mythemes-header-btn-1-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header first button background color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button{
+        background-color: #4caf50;
+    }
+</style>
+
+<!-- header first button background hover color -->
+<style type="text/css" id="mythemes-header-btn-1-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-first-button:hover{
+        background-color: #43a047;
+    }
+</style>
+
+<!-- header second button -->
+<!-- header second button text color -->
+<style type="text/css" id="mythemes-header-btn-2-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        color: #ffffff;
+    }
+</style>
+
+<!-- header second button background color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button{
+        background-color: #e53935;
+    }
+</style>
+
+<!-- header second button background hover color -->
+<style type="text/css" id="mythemes-header-btn-2-bkg-h-color" media="all">
+    div.mythemes-header.parallax-container div.mythemes-header-buttons a.btn-large.mythemes-second-button:hover{
+        background-color: #d32f2f;
+    }
+</style>
+		<style type="text/css" id="wp-custom-css">
+			/*
+您可以在此处加入您的CSS。
+
+点击上方的帮助图标来了解更多。
+*/
+
+.mythemes-classic .post-thumbnail:hover {
+    background-color: rgba( 0, 0, 0, 0 );
+}		</style>
+		    </head>
+    <body class="archive category category-dev category-6 wp-custom-logo">
+
+        
+
+        
+        <header class="mythemes-miss-header-image">
+
+            <!-- header navigation -->
+            <nav class="white mythemes-topper" role="navigation">
+                <div class="nav-wrapper container">
+
+                    <!-- header button -->
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="materialize-icon-menu"></i></a>
+
+                    <!-- Site Logo, Title and Description -->
+                    <div class="mythemes-blog-identity"><div class="mythemes-blog-logo" style="margin-top: 0px; margin-bottom: 0px;"><a href="index.htm" tppabs="http://localhost/xuepub/" class="custom-logo-link" rel="home"><img width="162" height="60" src="logo-1.png" tppabs="http://localhost/xuepub/wp-content/uploads/2016/04/logo-1.png" class="custom-logo" alt="学吧" /></a></div><a class="mythemes-blog-title" href="index.htm" tppabs="http://localhost/xuepub/" title="学吧 - ">学吧</a></div><div class="not-collapsed-wrapper"><ul id="menu-main" class="right hide-on-med-and-down"><li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-10"><a href="index.htm" tppabs="http://localhost/xuepub/">首页</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="index-1.htm" tppabs="http://localhost/xuepub/category/front-end/">前端</a></li>
+<li id="menu-item-605" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-menu-ancestor current-menu-parent current-category-parent menu-item-has-children menu-item-605"><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/">后端</a>
+<ul class="sub-menu">
+	<li id="menu-item-610" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-610"><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" aria-current="page">开发</a></li>
+	<li id="menu-item-609" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-609"><a href="index-4.htm" tppabs="http://localhost/xuepub/category/back-end/ops/">运维</a></li>
+</ul>
+</li>
+<li id="menu-item-607" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-607"><a href="index-5.htm" tppabs="http://localhost/xuepub/category/app/">应用</a></li>
+<li id="menu-item-608" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-608"><a href="index-6.htm" tppabs="http://localhost/xuepub/category/course/">课程</a></li>
+</ul></div><div class="collapsed-wrapper"><ul id="nav-mobile" class="side-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-10"><a href="index.htm" tppabs="http://localhost/xuepub/">首页</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="index-1.htm" tppabs="http://localhost/xuepub/category/front-end/">前端</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-menu-ancestor current-menu-parent current-category-parent menu-item-has-children menu-item-605"><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/">后端</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-610"><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" aria-current="page">开发</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-609"><a href="index-4.htm" tppabs="http://localhost/xuepub/category/back-end/ops/">运维</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-607"><a href="index-5.htm" tppabs="http://localhost/xuepub/category/app/">应用</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-608"><a href="index-6.htm" tppabs="http://localhost/xuepub/category/course/">课程</a></li>
+</ul></div>                </div>
+            </nav>
+
+            <!-- the header image and the header elements -->
+            
+        </header>
+
+                <!-- the breadcrumbs content -->
+            <div class="mythemes-page-header">
+
+                <!-- the breadcrumbs container ( align to center ) -->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col s12 m8 l9">
+                    
+                            <!-- the breadcrumbs navigation path -->
+                            <nav class="mythemes-nav-inline">
+                                <ul class="mythemes-menu">
+
+                                    <li id="home-label"><a href="index.htm" tppabs="http://localhost/xuepub/" title="go to home"><i class="materialize-icon-home"></i> <span>Home</span></a></li><li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" title="See articles from category - 后端">后端</a></li><li>开发</li>
+                                    <!-- the last arrow from path -->
+                                    <li></li>
+                                </ul>
+                            </nav>
+
+                            <!-- the headline -->
+                            <h1>Category Archives</h1>
+                        </div>
+
+                        <!-- the number of posts from category -->
+                        <div class="col s12 m4 l3 mythemes-posts-found">
+                            <div class="found-details">
+                                <span>12 Articles</span>                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+    
+
+    <!-- the content -->
+    <div class="content">
+
+        <!-- the container ( align to center ) -->
+        <div class="container">
+            <div class="row">
+
+                
+<!-- content -->
+<section class="col s12 m12 l9 mythemes-classic mythemes-classic">
+
+
+    <!-- post content wrapper -->
+    <article class="post-521 post type-post status-publish format-standard hentry category-back-end category-dev tag-agile">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-23.htm" tppabs="http://localhost/xuepub/2016/06/24/%e7%94%a8%e6%88%b7%e6%95%85%e4%ba%8b%e7%ae%80%e8%bf%b0/" title="用户故事简述">用户故事简述</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-24"><i class="materialize-icon-calendar"></i>on 2016年6月24日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <p>&nbsp;</p>
+<p>用户故事用于更有效率的确定软件需求</p>
+<p>&nbsp;</p>
+<h2>参考</h2>
+<ul>
+<li>《用户故事与敏捷方法》</li>
+<li>《用户故事地图》，Oreilly</li>
+</ul>
+<p>&nbsp;</p>
+<h2>故事卡片</h2>
+<ul>
+<li>Card 计划，使用陈述句式，1 &#8211; 2 句</li>
+<li>Conversation 对话，补充说明，延迟细节</li>
+<li>Confirmation 测试，卡片背面</li>
+</ul>
+<p>&nbsp;</p>
+<h2>粒度</h2>
+<ul>
+<li>史诗</li>
+<li>复合故事，可不断分解</li>
+<li>最小故事</li>
+</ul>
+<p>&nbsp;</p>
+<h2>关注点</h2>
+<ul>
+<li>用户角色建模</li>
+<li>功能型需求</li>
+<li>非功能型需求</li>
+<li>故事点数估算</li>
+</ul>
+<p>&nbsp;</p>
+<h2>故事地图</h2>
+<ul>
+<li>叙事流</li>
+<li>活动主干</li>
+<li>切分，识别任务细节</li>
+</ul>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-470 post type-post status-publish format-standard hentry category-back-end category-dev tag-java">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-25.htm" tppabs="http://localhost/xuepub/2016/06/13/jhipster-%e7%ae%80%e8%bf%b0/" title="JHipster 简述">JHipster 简述</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-13"><i class="materialize-icon-calendar"></i>on 2016年6月13日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>文档</h2>
+<p><a href="javascript:if(confirm(%27https://jhipster.github.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://jhipster.github.io/%27" tppabs="https://jhipster.github.io/" target="_blank" rel="noopener">https://jhipster.github.io/</a></p>
+<p><a href="javascript:if(confirm(%27https://www.infoq.com/minibooks/jhipster-mini-book  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://www.infoq.com/minibooks/jhipster-mini-book%27" tppabs="https://www.infoq.com/minibooks/jhipster-mini-book" target="_blank" rel="noopener">https://www.infoq.com/minibooks/jhipster-mini-book</a></p>
+<p><a href="javascript:if(confirm(%27http://www.jhipster-book.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.jhipster-book.com/%27" tppabs="http://www.jhipster-book.com/" target="_blank" rel="noopener">http://www.jhipster-book.com/</a></p>
+<p>&nbsp;</p>
+<h2>环境安装</h2>
+<ul>
+<li>git</li>
+<li>Node.js LTS 4.4</li>
+<li>npm install -g npm（MacOS 前置 sudo）</li>
+<li>npm install -g yo</li>
+<li>npm install -g bower</li>
+<li>npm install -g gulp</li>
+<li>maven 会自动下载
+<ul>
+<li>gradle 可选</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Yeoman</h2>
+<ul>
+<li>Yo 脚手架工具，可从模板生成标准的项目文件</li>
+<li>Bower 包管理工具，管理并下载前端依赖</li>
+<li>Gulp 构建工具，实现前端的多种任务</li>
+</ul>
+<p>&nbsp;</p>
+<h2>启动项目</h2>
+<ul>
+<li>yo jhipster</li>
+</ul>
+<pre class="lang:vim decode:true ">? (1/16) Which *type* of application would you like to create? Monolithic application (recommended for simple projects)
+? (2/16) What is the base name of your application? hello
+? (3/16) What is your default Java package name? com.xuepub.helloapp
+? (4/16) Which *type* of authentication would you like to use? HTTP Session Authentication (stateful, default Spring Security mechanism)
+? (5/16) Do you want to use social login (Google, Facebook, Twitter)? Warning, this doesn't work with Cassandra! No
+? (6/16) Which *type* of database would you like to use? SQL (H2, MySQL, MariaDB, PostgreSQL, Oracle)
+? (7/16) Which *production* database would you like to use? MySQL
+? (8/16) Which *development* database would you like to use? H2 with disk-based persistence
+? (9/16) Do you want to use Hibernate 2nd level cache? Yes, with ehcache (local cache, for a single node)
+? (10/16) Do you want to use a search engine in your application? Yes, with ElasticSearch
+? (11/16) Do you want to use clustered HTTP sessions? No
+? (12/16) Do you want to use WebSockets? No
+? (13/16) Would you like to use Maven or Gradle for building the backend? Gradle
+? (14/16) Would you like to use the LibSass stylesheet preprocessor for your CSS? No
+? (15/16) Would you like to enable internationalization support? Yes
+? Please choose the native language of the application? Chinese (Simplified)
+? Please choose additional languages to install (Press &lt;space&gt; to select)
+? (16/16) Which testing frameworks would you like to use? (Press &lt;space&gt; to select)Gatling</pre>
+<ul>
+<li>npm install &amp; bower install</li>
+<li>gulp install</li>
+</ul>
+<p>&nbsp;</p>
+<h2>脚手架示例</h2>
+<p>yo jhipster:entity blog，脚手架执行</p>
+<pre class="lang:vim decode:true">Generating field #1
+? Do you want to add a field to your entity? Yes
+? What is the name of your field? name
+? What is the type of your field? String
+? Do you want to add validation rules to your field? Yes
+? Which validation rules do you want to add? Required
+
+Generating field #2
+? Do you want to add a field to your entity? Yes
+? What is the name of your field? handle
+? What is the type of your field? String
+? Do you want to add validation rules to your field? Yes
+? Which validation rules do you want to add? Required
+
+Generating field #3
+? Do you want to add a field to your entity? No
+
+
+Generating relationships to other entities
+? Do you want to add a relationship to another entity? Yes
+? What is the name of the other entity? user
+? What is the name of the relationship? user
+? What is the type of the relationship? many-to-one
+? When you display this relationship with AngularJS, which field from 'user' do you want to use? login
+? Do you want to add any validation rules to this relationship? Yes
+? Which validation rules do you want to add? Required
+
+Generating relationships to other entities
+? Do you want to add a relationship to another entity? Yes
+? What is the name of the other entity? entry
+? What is the name of the relationship? entry
+? What is the type of the relationship? one-to-many
+? What is the name of this relationship in the other entity? blog
+
+Generating relationships to other entities
+? Do you want to add a relationship to another entity? No
+
+? Do you want to use a Data Transfer Object (DTO)? No, use the entity directly
+? Do you want to use separate service class for your business logic? No, the REST controller should use the repository directly
+? Do you want pagination on your entity? No
+
+...</pre>
+<p>使用 JDL</p>
+<ul>
+<li>yo jhipster:import-jdl yourJdlFile.jh</li>
+<li>推荐使用 jhipster-uml</li>
+</ul>
+<p>&nbsp;</p>
+<h2>发布</h2>
+<p><strong>开发</strong></p>
+<p>运行启动 8080 端口</p>
+<ul>
+<li>mvnw （mac ./mvnw）</li>
+<li>或 gradlew bootrun</li>
+</ul>
+<p>gulp 启动9000端口，监控前端代码变化</p>
+<ul>
+<li>gulp serve</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>产品</strong></p>
+<p>运行</p>
+<ul>
+<li>mvnw -Pprod</li>
+<li>或 gradlew -Pprod</li>
+</ul>
+<p>打包并部署</p>
+<ul>
+<li>mvnw -Pprod package</li>
+<li>或 gradlew -Pprod bootRepackage</li>
+<li>java -jar projectname-0.0.1-SNAPSHOT.war &#8211;spring.profiles.active=prod</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Microservices 微服务</h2>
+<p>架构 Gateway API + Registry + N * Service + Console</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-485" src="JHipster-1.png" tppabs="http://localhost/xuepub/wp-content/uploads/2016/06/JHipster-1.png" alt="JHipster" width="854" height="640" /></p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-439 post type-post status-publish format-standard hentry category-back-end category-dev tag-java">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-26.htm" tppabs="http://localhost/xuepub/2016/06/06/java-web-%e6%8a%80%e6%9c%af%e8%b6%8b%e5%8a%bf/" title="Java Web 技术趋势">Java Web 技术趋势</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-06"><i class="materialize-icon-calendar"></i>on 2016年6月6日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <p>&nbsp;</p>
+<p><b>架构 &amp; 思想</b></p>
+<ul>
+<li>Reactive System <a href="javascript:if(confirm(%27http://www.reactivemanifesto.org/zh-CN  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.reactivemanifesto.org/zh-CN%27" tppabs="http://www.reactivemanifesto.org/zh-CN" target="_blank" rel="noopener">http://www.reactivemanifesto.org/zh-CN</a></li>
+<li>Microservices <a href="javascript:if(confirm(%27http://martinfowler.com/articles/microservices.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://martinfowler.com/articles/microservices.html%27" tppabs="http://martinfowler.com/articles/microservices.html" target="_blank" rel="noopener">http://martinfowler.com/articles/microservices.html</a></li>
+<li>12-Factor <a href="javascript:if(confirm(%27http://12factor.net/zh_cn/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://12factor.net/zh_cn/%27" tppabs="http://12factor.net/zh_cn/" target="_blank" rel="noopener">http://12factor.net/zh_cn/</a></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>应用</strong></p>
+<ul>
+<li>搜索 Elastic Search</li>
+<li>分布式文件 + 数据处理 Hadoop</li>
+</ul>
+<p>&nbsp;</p>
+<p><b>部署</b></p>
+<ul>
+<li>Ansible</li>
+<li>Docker</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>敏捷工具</strong></p>
+<ul>
+<li>Github</li>
+<li>持续集成 Jenkins</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Web 框架</strong></p>
+<ul>
+<li>轻量级 Play</li>
+<li>企业级 Spring Boot</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>前端</strong></p>
+<ul>
+<li>Angular</li>
+<li>React</li>
+<li>D3</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>数据库</strong></p>
+<ul>
+<li>版本控制 Flyway / Liquibase</li>
+</ul>
+<p>&nbsp;</p>
+<p>参考资料 <a href="javascript:if(confirm(%27https://www.thoughtworks.com/radar/a-z  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://www.thoughtworks.com/radar/a-z%27" tppabs="https://www.thoughtworks.com/radar/a-z" target="_blank" rel="noopener">https://www.thoughtworks.com/radar/a-z</a></p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-413 post type-post status-publish format-standard hentry category-back-end category-dev tag-java">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-27.htm" tppabs="http://localhost/xuepub/2016/06/03/spring-boot-%e5%9f%ba%e7%a1%80/" title="Spring Boot 基础">Spring Boot 基础</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-06-03"><i class="materialize-icon-calendar"></i>on 2016年6月3日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>参考</h2>
+<ul>
+<li>官方手册 <a href="javascript:if(confirm(%27http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/%27" tppabs="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/" target="_blank" rel="noopener">http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/</a></li>
+<li>中文翻译 <a href="javascript:if(confirm(%27http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html%27" tppabs="http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html" target="_blank" rel="noopener">http://udn.yyuap.com/doc/Spring-Boot-Reference-Guide/index.html</a></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: 24px; line-height: 36px;"><b>构建</b></span></p>
+<ul>
+<li>Spring Initializr <a href="javascript:if(confirm(%27https://start.spring.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://start.spring.io/%27" tppabs="https://start.spring.io/" target="_blank" rel="noopener">https://start.spring.io/</a></li>
+<li>Maven / Gradle</li>
+<li>spring-boot-starter-*</li>
+</ul>
+<p>&nbsp;</p>
+<h2>基本代码分析</h2>
+<pre class="lang:vim decode:true ">com
+  +- example
+    +- myproject
+      +- Application.java - 1
+      |
+      +- domain
+      | +- Customer.java - 2
+      | +- CustomerRepository.java - 3
+      |
+      +- service
+      | +- CustomerService.java - 4
+      |
+      +- web
+        +- CustomerController.java - 5
+</pre>
+<p>&nbsp;</p>
+<p><strong>Application.java &#8211; 1 </strong></p>
+<p>入口 <span style="color: #ff0000;">Main 方法</span>，执行配置及服务</p>
+<p>类注解 @SpringBootApplication 等同于 @Configuration 配置类 + @EnableAutoConfiguration + @ComponentScan 自动扫描</p>
+<p>@Configuration 使用基于 XML 的配置</p>
+<p>@ComponentScan 用于自动查找所有以 @Component、@Service、@Repository、@Controller 注册的 Bean</p>
+<p>方法注解 @Autowired 指定构造方法注入的依赖</p>
+<p>&nbsp;</p>
+<p><strong>domain/Customer.java &#8211; 2</strong></p>
+<p>POJO<span style="color: #999999;"><span style="color: #000000;">，即</span></span><span style="color: #ff0000;">领域模型</span></p>
+<p>类注解 @Entity</p>
+<p>存储数据对象，定义属性、 get / set 方法，可通过构造方法 set 属性</p>
+<p>&nbsp;</p>
+<p><strong>domain/CustomerRepository.java &#8211; 3</strong></p>
+<p>Spring Data JPA Repositories <span style="color: #ff0000;">数据访问</span></p>
+<p>继承自 Repository&lt;Customer, Long&gt; 或 CrudRepository&lt;Customer, Long&gt; 接口</p>
+<p>&nbsp;</p>
+<p><strong>service/CustomerService.java &#8211; 4</strong></p>
+<p>服务类 / <span style="color: #ff0000;">业务逻辑</span>类 &#8211; 封装功能</p>
+<p>类注解 @Service</p>
+<p>&nbsp;</p>
+<p><strong>web/CustomerController.java &#8211; 5</strong></p>
+<p>Spring Web <span style="color: #ff0000;">MVC 控制器</span></p>
+<p>类注解 @Controller 或 @RestController</p>
+<p>类 / 方法注解 @RequestMapping 指定路由</p>
+<p>返回视图（JSP、模板）或 Json（前后分离）</p>
+<p>&nbsp;</p>
+<h2>配置</h2>
+<p><strong>CustomerConfig.java</strong></p>
+<p>支持基于 Java 和 XML 的配置</p>
+<p>类注解 @Configuration 声明<span style="color: #ff0000;">配置</span>类，用于定义 Bean</p>
+<p>类注解 @ComponentScan 自动扫描</p>
+<p>方法注解 @Bean 声明配置类中方法的返回值为 Bean</p>
+<p>&nbsp;</p>
+<p><strong>application.properties</strong></p>
+<p>功能参数配置</p>
+<p>&nbsp;</p>
+<h2>数据</h2>
+<p><a href="javascript:if(confirm(%27http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/%27" tppabs="http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/" target="_blank" rel="noopener">http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/</a></p>
+<p>Spring Data JPA 参考 <a href="javascript:if(confirm(%27http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/%27" tppabs="http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/" target="_blank" rel="noopener">http://docs.spring.io/spring-data/jpa/docs/1.10.1.RELEASE/reference/html/</a></p>
+<p>参数自动配置 / Java 手动配置 DataSource</p>
+<p>声明实体类，@Entity</p>
+<p>声明对应的 Dao 接口，继承 CrudRepository 接口</p>
+<p>在控制器中指定 Dao，并操纵数据对象</p>
+<p>&nbsp;</p>
+<h2>认证</h2>
+<p>Spring Security 参考 <a href="javascript:if(confirm(%27http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/%27" tppabs="http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/" target="_blank" rel="noopener">http://docs.spring.io/spring-security/site/docs/4.1.0.RELEASE/reference/htmlsingle/</a></p>
+<p><a href="javascript:if(confirm(%27https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql%27" tppabs="https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql" target="_blank" rel="noopener">https://github.com/hellokoding/registration-login-spring-xml-maven-jsp-mysql</a></p>
+<p>&nbsp;</p>
+<h2>脚手架</h2>
+<p><strong>JHipster</strong></p>
+<p><a href="javascript:if(confirm(%27https://jhipster.github.io/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://jhipster.github.io/%27" tppabs="https://jhipster.github.io/" target="_blank" rel="noopener">https://jhipster.github.io/</a></p>
+<p>&nbsp;</p>
+<p><strong>Spring Roo</strong></p>
+<p><a href="javascript:if(confirm(%27http://projects.spring.io/spring-roo/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://projects.spring.io/spring-roo/%27" tppabs="http://projects.spring.io/spring-roo/" target="_blank" rel="noopener">http://projects.spring.io/spring-roo/</a></p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-229 post type-post status-publish format-standard hentry category-back-end category-dev tag-java">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-28.htm" tppabs="http://localhost/xuepub/2016/05/31/java-web-%e8%b7%af%e7%ba%bf/" title="Java Web 路线">Java Web 路线</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-31"><i class="materialize-icon-calendar"></i>on 2016年5月31日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>开发环境</h2>
+<ul>
+<li><span style="color: #0000ff;">Java SE JDK 8</span></li>
+<li>IDE &#8211;<span style="color: #0000ff;"> IntelliJ IDEA</span> / Eclipse for Java EE / Spring Tool Suite</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Web 服务器</h2>
+<ul>
+<li>Embedded Tomcat (jar)</li>
+<li>Java Web &#8211; <span style="color: #0000ff;">Tomcat</span> / Jetty (war)</li>
+<li>Java EE &#8211; TomEE / JBoss</li>
+</ul>
+<p>&nbsp;</p>
+<h2>构建工具</h2>
+<ul>
+<li><span style="color: #0000ff;">Maven</span> / <span style="color: #ff9900;">Gradle</span></li>
+</ul>
+<p>&nbsp;</p>
+<h2>业务层</h2>
+<ul>
+<li><del>Servlet</del>  / <span style="color: #0000ff;">Spring + Spring Boot + Spring MVC</span></li>
+<li><del>EJB</del> / Spring (Bean)</li>
+</ul>
+<p>&nbsp;</p>
+<h2>视图与前端</h2>
+<ul>
+<li>JSP / FreeMarker /<span style="color: #ff9900;"> <span style="color: #0000ff;">Thymeleaf</span></span></li>
+<li><span style="color: #0000ff;">HTML + CSS + JavaScript</span></li>
+<li>Angular / <span style="color: #ff9900;">React</span></li>
+</ul>
+<p>&nbsp;</p>
+<h2>模型与数据库</h2>
+<ul>
+<li>JDBC / <span style="color: #000000;">Hibernate / <span style="color: #0000ff;">Spring Data JPA</span></span></li>
+<li><span style="color: #0000ff;">MySQL</span></li>
+<li><span style="color: #ff9900;">MongoDB</span></li>
+<li><span style="color: #ff9900;">Redis</span></li>
+</ul>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-364 post type-post status-publish format-standard hentry category-back-end category-dev tag-java">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-29.htm" tppabs="http://localhost/xuepub/2016/05/27/java-se-%e5%ad%a6%e4%b9%a0/" title="Java SE 学习">Java SE 学习</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-27"><i class="materialize-icon-calendar"></i>on 2016年5月27日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>Java 准备</h2>
+<p>Java SE &#8211; 标准版，包含全部语法、基本库</p>
+<p>Java EE &#8211; 企业版，用于 Web、服务等</p>
+<p>JVM &#8211; 虚拟机，用于运行编译过的 Java、Scala、Groovy、Clojure 等代码</p>
+<p>&nbsp;</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-369" src="Java-Timeline-1.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/Java-Timeline-1.jpg" alt="Java Timeline" width="835" height="340" /></p>
+<p>&nbsp;</p>
+<p>Java EE 中包含了Java SE JDK 开发包（必备），后者内含 JRE</p>
+<p>JDK 安装后需要配置 JAVA 环境变量</p>
+<p><a href="javascript:if(confirm(%27http://www.cnblogs.com/zhj5chengfeng/archive/2013/01/01/2841253.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.cnblogs.com/zhj5chengfeng/archive/2013/01/01/2841253.html%27" tppabs="http://www.cnblogs.com/zhj5chengfeng/archive/2013/01/01/2841253.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhj5chengfeng/archive/2013/01/01/2841253.html</a></p>
+<p>集成开发环境（IDE）</p>
+<ul>
+<li>Eclipse 系列（包含 Spring Tool Suite）</li>
+<li>IntelliJ IDEA 系列（包含 Android Studio）</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Java 基础</h2>
+<p><strong>参考</strong></p>
+<ul>
+<li>官方文档 <a href="javascript:if(confirm(%27http://docs.oracle.com/javase/8/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://docs.oracle.com/javase/8/%27" tppabs="http://docs.oracle.com/javase/8/" target="_blank" rel="noopener">http://docs.oracle.com/javase/8/</a></li>
+<li>入门图书《Think Java》 <a href="javascript:if(confirm(%27http://greenteapress.com/wp/think-java/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://greenteapress.com/wp/think-java/%27" tppabs="http://greenteapress.com/wp/think-java/" target="_blank" rel="noopener">http://greenteapress.com/wp/think-java/</a></li>
+<li>语法手册《Java 8 Pocket Guide》</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>语法</strong></p>
+<ul>
+<li>数组、泛型、集合</li>
+<li>语句、异常处理</li>
+<li>方法、Lambda 表达式</li>
+<li>面向对象（类、对象、接口、继承&#8230;）</li>
+<li>package 包</li>
+</ul>
+<p>&nbsp;</p>
+<p><b>用法</b></p>
+<ul>
+<li>反射</li>
+<li>注解</li>
+<li>并发</li>
+<li>I/O</li>
+<li>XML、JSON</li>
+<li>API（日期、脚本&#8230;）</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Java 进阶</h2>
+<ul>
+<li>设计模式 和 UML 图</li>
+<li>JavaFX 界面</li>
+<li>JDBC +  数据库</li>
+<li>网络</li>
+<li>Web 服务</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>资源</strong></p>
+<ul>
+<li>组件 <a href="javascript:if(confirm(%27https://github.com/akullpp/awesome-java  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/akullpp/awesome-java%27" tppabs="https://github.com/akullpp/awesome-java" target="_blank" rel="noopener">https://github.com/akullpp/awesome-java</a></li>
+<li>算法 <a href="javascript:if(confirm(%27http://algs4.cs.princeton.edu/code/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://algs4.cs.princeton.edu/code/%27" tppabs="http://algs4.cs.princeton.edu/code/" target="_blank" rel="noopener">http://algs4.cs.princeton.edu/code/</a></li>
+<li>设计模式 <a href="javascript:if(confirm(%27https://github.com/iluwatar/java-design-patterns  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/iluwatar/java-design-patterns%27" tppabs="https://github.com/iluwatar/java-design-patterns" target="_blank" rel="noopener">https://github.com/iluwatar/java-design-patterns</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2>相关工具</h2>
+<ul>
+<li>命令行工具
+<ul>
+<li>Java 编译器 javac</li>
+<li>Java 解释器 java</li>
+<li>JAR 档案包</li>
+<li>Javadoc</li>
+</ul>
+</li>
+<li>构建工具 &#8211; 用于从源代码中构建项目
+<ul>
+<li>Maven，基于 XML</li>
+<li>Gradle，基于 Groovy</li>
+</ul>
+</li>
+<li>版本控制
+<ul>
+<li>Git</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>推荐阅读</h2>
+<ul>
+<li>《Java 编程思想 第4版》</li>
+<li>《Java 8 实战》</li>
+<li>《Java 并发编程实战》</li>
+<li>《Effective Java 第2版》</li>
+<li>《代码整洁之道》</li>
+<li>《重构》</li>
+</ul>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-312 post type-post status-publish format-standard hentry category-back-end category-dev">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-30.htm" tppabs="http://localhost/xuepub/2016/05/15/%e8%bd%af%e4%bb%b6%e7%bb%8f%e5%85%b8%e4%b9%a6%e7%9b%ae/" title="软件经典书目">软件经典书目</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-15"><i class="materialize-icon-calendar"></i>on 2016年5月15日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            
+<table id="tablepress-1" class="tablepress tablepress-id-1">
+<thead>
+<tr class="row-1 odd">
+	<th class="column-1">封面</th><th class="column-2">书目</th><th class="column-3">中<br />
+EN<br />
+(1E)</th><th class="column-4">描述</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+	<td class="column-1"><img src="s3060760-1-211x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s3060760-1-211x300.jpg" alt="s3060760" width="105" height="150" class="alignnone size-medium wp-image-315" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/2208626/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/2208626/%27" tppabs="https://book.douban.com/subject/2208626/" target="_blank" rel="noopener"><strong>代码大全<br>(2E)</strong></a></td><td class="column-3">2007<br />
+2004<br />
+(1993)</td><td class="column-4">编程入门<br />
+规范</td>
+</tr>
+<tr class="row-3 odd">
+	<td class="column-1"><img src="s27243455-1-208x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s27243455-1-208x300.jpg" alt="s27243455" width="104" height="150" class="alignnone size-medium wp-image-316" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/2130190/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/2130190/%27" tppabs="https://book.douban.com/subject/2130190/" target="_blank" rel="noopener"><strong>Java 编程思想<br>(4E)</strong></a></td><td class="column-3">2007<br />
+2004<br />
+(1998)</td><td class="column-4">Java<br />
+面向对象思想</td>
+</tr>
+<tr class="row-4 even">
+	<td class="column-1"><img src="s1074361-1-213x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s1074361-1-213x300.jpg" alt="s1074361" width="106" height="150" class="alignnone size-medium wp-image-323" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/1052241/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/1052241/%27" tppabs="https://book.douban.com/subject/1052241/" target="_blank" rel="noopener"><strong>设计模式</strong></a></td><td class="column-3">2000<br />
+1994</td><td class="column-4">设计模式</td>
+</tr>
+<tr class="row-5 odd">
+	<td class="column-1"><img src="s1669771-1-229x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s1669771-1-229x300.jpg" alt="s1669771" width="114" height="150" class="alignnone size-medium wp-image-325" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/1229923/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/1229923/%27" tppabs="https://book.douban.com/subject/1229923/" target="_blank" rel="noopener"><strong>重构</strong></a></td><td class="column-3">2003<br />
+1999</td><td class="column-4">代码重构</td>
+</tr>
+<tr class="row-6 even">
+	<td class="column-1"><img src="s1113106-1-211x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s1113106-1-211x300.jpg" alt="s1113106" width="105" height="150" class="alignnone size-medium wp-image-321" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/1148282/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/1148282/%27" tppabs="https://book.douban.com/subject/1148282/" target="_blank" rel="noopener"><strong>计算机程序的构造和解释<br>(2E)</strong></a></td><td class="column-3">2004<br />
+1996<br />
+(1984)</td><td class="column-4">Scheme<br />
+函数式编程</td>
+</tr>
+<tr class="row-7 odd">
+	<td class="column-1"><img src="s25648004-1-220x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s25648004-1-220x300.jpg" alt="s25648004" width="110" height="150" class="alignnone size-medium wp-image-327" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/20432061/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/20432061/%27" tppabs="https://book.douban.com/subject/20432061/" target="_blank" rel="noopener"><strong>算法导论<br>(3E)</strong></a></td><td class="column-3">2012<br />
+2009<br />
+(1990)</td><td class="column-4">算法入门</td>
+</tr>
+<tr class="row-8 even">
+	<td class="column-1"><img src="s9055036-1-215x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s9055036-1-215x300.jpg" alt="s9055036" width="107" height="150" class="alignnone size-medium wp-image-329" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/series/12331  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/series/12331%27" tppabs="https://book.douban.com/series/12331" target="_blank" rel="noopener"><strong>计算机程序设计艺术</strong></a></td><td class="column-3">2002<br />
+1997<br />
+(1973)</td><td class="column-4">算法巅峰</td>
+</tr>
+<tr class="row-9 odd">
+	<td class="column-1"><img src="s1631790-1-223x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s1631790-1-223x300.jpg" alt="s1631790" width="111" height="150" class="alignnone size-medium wp-image-330" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/1467587/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/1467587/%27" tppabs="https://book.douban.com/subject/1467587/" target="_blank" rel="noopener"><strong>UNIX 编程艺术</strong></a></td><td class="column-3">2006<br />
+2003</td><td class="column-4">UNIX 开发思想</td>
+</tr>
+<tr class="row-10 even">
+	<td class="column-1"><img src="s4669554-1-213x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s4669554-1-213x300.jpg" alt="s4669554" width="106" height="150" class="alignnone size-medium wp-image-333" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/6021440/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/6021440/%27" tppabs="https://book.douban.com/subject/6021440/" target="_blank" rel="noopener"><strong>黑客与画家</strong></a></td><td class="column-3">2011<br />
+2010</td><td class="column-4">互联网<br />
+技术思考</td>
+</tr>
+<tr class="row-11 odd">
+	<td class="column-1"><img src="s1789059-1-211x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s1789059-1-211x300.jpg" alt="s1789059" width="105" height="150" class="alignnone size-medium wp-image-331" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/1291204/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/1291204/%27" tppabs="https://book.douban.com/subject/1291204/" target="_blank" rel="noopener"><strong>集异璧之大成</strong></a></td><td class="column-3">1997<br />
+1980</td><td class="column-4">人工智能<br />
+艺术<br />
+哲学</td>
+</tr>
+<tr class="row-12 even">
+	<td class="column-1"><img src="s1086045-1-211x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s1086045-1-211x300.jpg" alt="s1086045" width="105" height="150" class="alignnone size-medium wp-image-324" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/1102259/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/1102259/%27" tppabs="https://book.douban.com/subject/1102259/" target="_blank" rel="noopener"><strong>人月神话</strong></a></td><td class="column-3">2002<br />
+1975</td><td class="column-4">项目管理思考</td>
+</tr>
+<tr class="row-13 odd">
+	<td class="column-1"><img src="s4571846-1-211x300.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/s4571846-1-211x300.jpg" alt="s4571846" width="105" height="150" class="alignnone size-medium wp-image-332" /></td><td class="column-2"><a href="javascript:if(confirm(%27https://book.douban.com/subject/5406042/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://book.douban.com/subject/5406042/%27" tppabs="https://book.douban.com/subject/5406042/" target="_blank" rel="noopener"><strong>设计原本</strong></a></td><td class="column-3">2011<br />
+2010</td><td class="column-4">设计思想</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-1 from cache -->
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-276 post type-post status-publish format-standard hentry category-back-end category-dev tag-php">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-31.htm" tppabs="http://localhost/xuepub/2016/05/14/laravel-%e5%bc%80%e5%8f%91%e6%a1%86%e6%9e%b6/" title="Laravel 基础">Laravel 基础</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-14"><i class="materialize-icon-calendar"></i>on 2016年5月14日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>环境配置</h2>
+<ul>
+<li>Windows 10</li>
+<li>Sublime Text / PhpStorm</li>
+<li>虚拟机环境 <span style="color: #ff0000;">Homestead<span style="color: #000000;">（官方推荐）或 XAMPP </span></span></li>
+<li>下载 Composer-Setup.exe 安装 Composer
+<ul>
+<li>设置 PHP 执行路径，如 C:\xampp\php\php.exe</li>
+<li>php -v</li>
+<li>composer -V</li>
+</ul>
+</li>
+<li>安装 Laravel Installer</li>
+</ul>
+<pre class="lang:sh decode:true">composer global require "laravel/installer"
+
+（出现无法连接时使用 composer config secure-http false）
+（composer config -g github-oauth.github.com [tokens]）</pre>
+<h2></h2>
+<h2>资料</h2>
+<ul>
+<li><a href="javascript:if(confirm(%27https://laravel.com/docs  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://laravel.com/docs%27" tppabs="https://laravel.com/docs" target="_blank" rel="noopener">https://laravel.com/docs</a>，官方文档</li>
+<li><a href="javascript:if(confirm(%27http://laravel-china.org/docs  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://laravel-china.org/docs%27" tppabs="http://laravel-china.org/docs" target="_blank" rel="noopener">http://laravel-china.org/docs</a>，中文第三方翻译</li>
+<li><a href="javascript:if(confirm(%27https://laracasts.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://laracasts.com/%27" tppabs="https://laracasts.com/" target="_blank" rel="noopener">https://laracasts.com/</a>，官方视频（付费、翻墙）</li>
+</ul>
+<p>&nbsp;</p>
+<h2>启动</h2>
+<p>建立新工程，目前为 5.2</p>
+<pre class="lang:sh decode:true">laravel new projectname</pre>
+<p>配置 storage 和 bootstrap/cache 访问权限为可写</p>
+<p>.env 中设置 key</p>
+<pre class="lang:sh decode:true">php artisan key:generate</pre>
+<p>配置 config/app.php</p>
+<p>启动内置 Web Server （端口 8000）来开发调试页面</p>
+<pre class="lang:sh decode:true ">php artisan serve</pre>
+<p>&nbsp;</p>
+<h2>路由</h2>
+<p>路由文件位置 app/Http/routes.php</p>
+<pre class="lang:php decode:true" title="app/Http/routes.php">&lt;?php
+
+Route::get('/', function () {
+    return view('welcome');
+});</pre>
+<p>在浏览器请求根目录（http://localhost:8000）时，通过闭包来返回视图页 resources/views/welcome.blade.php</p>
+<p>也可以返回包含在目录中的视图页</p>
+<pre class="lang:php decode:true" title="app/Http/routes.php">    //指向 resource/views/about/company.blade.php
+    return view('about.company');</pre>
+<p>路由传递了数据到视图</p>
+<pre class="lang:php decode:true" title="app/Http/routes.php">Route::get('/', function () {
+    $phones = ['Apple', 'huawei', 'xiaomi'];
+    return view('welcome', compact('phones'));
+});</pre>
+<p>视图显示接受到的数据</p>
+<pre class="lang:php decode:true" title="resource/views/welcome.blade.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Laravel&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt; 
+        &lt;ul&gt;
+            @foreach ($phones as $phone)
+                &lt;li&gt;{{ $phone }}&lt;/li&gt;
+            @endforeach
+        &lt;/ul&gt;
+    &lt;body&gt;
+&lt;/body&gt;</pre>
+<p>路由动作 Route::get 替换为 Route::post、Route::put、Route::delete，支持多种 HTTP 请求方式</p>
+<p>路由参数，通过 URI 获取参数</p>
+<pre class="lang:php decode:true">Route::get('user/{id}', function ($id) {
+    return 'User '.$id;
+});</pre>
+<p>&nbsp;</p>
+<h2>控制器</h2>
+<p>路由一般不处理逻辑和数据，而是指向控制器类，在控制器的函数中实现</p>
+<pre class="lang:php decode:true" title="app/Http/routes.php">&lt;?php
+
+Route::get('/', 'PagesController@home');</pre>
+<p>PagesController@home  指向 app/Http/Controllers/PagesController.php 的 PagesController-&gt;home() 函数</p>
+<p>可使用命令行创建控制器</p>
+<pre class="lang:sh decode:true">php artisan make:controller PagesController</pre>
+<pre class="lang:php decode:true" title="app/Http/Controllers/PagesController.php">&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
+class PagesController extends Controller
+{
+    public function home
+    {
+        $phones = array('Apple', 'huawei', 'xiaomi'); 
+        return view('welcome', compact('phones'));
+    }
+}</pre>
+<p>&nbsp;</p>
+<h2>视图</h2>
+<p>视图采用 <span style="color: #ff0000;">Blade</span> 引擎，通过 @yield 实现模板继承</p>
+<p>在布局页面（模板页面）中使用 @yield，以显示继承页面的 @section 内容</p>
+<pre class="lang:php decode:true" title="resources/views/layout.blade.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Laravel&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;      
+        @yield('content')       
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<pre class="lang:php decode:true" title="resources/views/welcome.blade.php">@extends('layout')
+
+@section('content')
+    &lt;ul&gt;
+        @foreach ($phones as $phone)
+            &lt;li&gt;{{ $phone }}&lt;/li&gt;
+        @endforeach
+    &lt;/ul&gt;
+@stop</pre>
+<p>包括布局、侧边栏等抽取出来的部分视图代码，可重复使用</p>
+<p>&nbsp;</p>
+<p>CSS 存在 public 目录下，视图 &lt;link href=&#8221;/style.css&#8221;&gt; 引入 public/style.css，JS 类似</p>
+<p>Laravel 集成了 gulp 的自动化构建功能，</p>
+<p>并提供 gulp-Elixir 扩展，可对Less、Sass、CoffeeScript 等前端语言进行编译</p>
+<p>待编译文件在  resources/assets 目录内，编译至 public 或 public/build（带版本）目录中</p>
+<p>&nbsp;</p>
+<h2>数据库</h2>
+<p>支持 MySQL、Postgres、SQLite、SQL Server、MongoDB</p>
+<p>采用 Eloquent ORM 和查询构造器</p>
+<p>数据库连接，配置 .env 和 config/database.php</p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">Migrations</span></p>
+<p>使用 Laravel 的迁移 Migrations 功能，创建数据库表</p>
+<p>以 books 为例，表定义见 <a href="javascript:if(confirm(%27http://www.xuepub.com/189.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.xuepub.com/189.html%27" tppabs="http://www.xuepub.com/189.html" target="_blank" rel="noopener">http://www.xuepub.com/189.html</a>，通过命令行生成迁移代码</p>
+<pre class="lang:php decode:true">php artisan make:migration create_books_table --create=books</pre>
+<p>位置在 database\migrations\2016_05_15_000634_create_books_table（文件中带有时间戳）</p>
+<pre class="lang:php decode:true">&lt;?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateBooksTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('books', function (Blueprint $table) {
+            $table-&gt;char('isbn', 13);          //isbn CHAR(13),
+            $table-&gt;string('author', 128);     //author VARCHAR(128),
+            $table-&gt;string('title', 128);      //title VARCHAR(128),
+            $table-&gt;string('category', 128);   //category VARCHAR(32),
+            $table-&gt;smallInteger('year');      //year SMALLINT
+            $table-&gt;primary('isbn');           //设置主键
+            $table-&gt;timestamps();              //时间戳
+        });
+    }
+
+    public function down()
+    {
+        Schema::drop('books');
+    }
+}</pre>
+<p>执行 migrate命令，初始化数据库</p>
+<pre class="lang:php decode:true">php artisan migrate</pre>
+<p>如果数据库结构发生变化，可通过 migrate:rollback、migrate:refresh 等命令执行回滚操作</p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">Tinker</span></p>
+<p>添加一行数据， 进入 Laravel 的 REPL &#8211; <span style="color: #000000;">Tinker</span></p>
+<pre class="lang:sh decode:true">php artisan tinker</pre>
+<p>执行原生 sql 语句</p>
+<pre class="lang:sh decode:true">DB::insert('insert into books (isbn, author, title, category, year) values (?, ?, ? ,?, ?)',
+    ['9781491936085', 'Matt Stauffer','Laravel: Up and Running','Laravel', 2016]);</pre>
+<p>或者用查询构造器</p>
+<pre class="lang:sh decode:true">DB::table('books')-&gt;insert([
+    'isbn' =&gt; '9781785285028',
+    'author' =&gt; 'Christopher John Pecoraro',
+    'title' =&gt; 'Mastering Laravel', 
+    'category' =&gt; 'Laravel',
+    'year' =&gt; 2015
+]);</pre>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">Seed</span></p>
+<p>可通过 Seed 类为数据库填充数据</p>
+<pre class="lang:sh decode:true">php artisan make:seeker BooksTableSeeder</pre>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">Eloquent ORM </span></p>
+<p>使用 Eloquent ORM 模型，先创建 Book 模型类</p>
+<pre class="lang:sh decode:true">php artisan make:model Book</pre>
+<p>生成 app/Book.php，内容可以不进行任何修改，将生成文件移动至 app/Models/Book.php</p>
+<pre class="lang:php decode:true" title="app/Models/Book.php">&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Book extends Model
+{
+    //
+}</pre>
+<p>显示数据的开发流程：<span style="color: #ff0000;">Route</span> &#8211; <span style="color: #ff0000;">Controller</span> &#8211; <span style="color: #ff0000;">View</span></p>
+<pre class="lang:php decode:true " title="app/Http/routes.php">Route::get('books', 'BooksController@index');</pre>
+<pre class="lang:php decode:true" title="app/Http/Controller/BooksController.php">&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Book; //Eloquent 引入
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
+class BooksController extends Controller
+{
+    public function index()
+    {
+    	$books = Book::All(); //Eloquent 
+    	return view('books.index', compact('books'));
+    }
+}</pre>
+<pre class="lang:xhtml decode:true" title="resources/Views/books/index.blade.php">//View 模板在 resources/Views/layout.blade.php
+@extends('layout')
+
+@section('content')
+	@foreach ($books as $book)
+		&lt;h1&gt;{{ $book-&gt;title }}&lt;/h1&gt;
+	@endforeach
+@stop</pre>
+<p>&nbsp;</p>
+<p>Eloquent 关系</p>
+<p>在模型类中添加 Note 类和 Book &#8211; Note 的一对多关系，实现对图书的评论，流程如下：</p>
+<ol>
+<li>通过 Migration 创建数据库表 notes
+<ul>
+<li>php artisan make:migration create_notes_table &#8211;create=notes</li>
+</ul>
+</li>
+<li>创建 Note 模型类
+<ul>
+<li>php artisan make:model Note</li>
+</ul>
+</li>
+<li>在模型类中分别添加 Eloquent 关系 hasMany()、belongTo()</li>
+</ol>
+<p>&nbsp;</p>
+<h2>表单</h2>
+<p><a href="javascript:if(confirm(%27https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers%27" tppabs="https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers" target="_blank" rel="noopener">https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers</a></p>
+<p>图书操作的路由设置</p>
+<pre class="lang:php decode:true" title="app/Http/routes.php">Route::get('books', 'BooksController@index');             //查看全部-列表 showAll
+Route::get('books/create', 'BooksController@create');     //添加新书-表单
+Route::post('books', 'BooksController@store');            //添加新书-命令
+Route::get('books/{id}', 'BooksController@show');       //查看某书 showOne
+Route::get('books/{id}/edit', 'BooksController@edit');  //修改某书-表单
+Route::patch('books/{id}', 'BooksController@update');   //修改某书-命令
+Route::delete('books/{id}', 'BooksController@destroy');        //删除某书-命令
+</pre>
+<p>视图</p>
+<ul>
+<li>app/views/books/
+<ul>
+<li>index.blade.php</li>
+<li>create.blade.php</li>
+<li>show.blade.php</li>
+<li>edit.blade.php</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>表单添加图书流程：</p>
+<ul>
+<li>添加新路由 Route::post(&#8216;books&#8217;, &#8216;BooksController@create&#8217;);</li>
+<li>控制器类 BooksController中实现 create() 方法
+<ul>
+<li>方法至少传入一个参数 Request $request</li>
+<li>new 实例化一个待存储对象</li>
+<li>用 $request 获取表单提交的数据，存入对象</li>
+<li>使用 Eloquent 中的 save() 方法存储数据</li>
+<li>返回值使用 redirect() 跳转到某个页面，或使用 back() 跳转到之前的页面</li>
+</ul>
+</li>
+<li>模型类中要对存储的 isbn、author 等字段设置 protected $fillable = [&#8216;isbn&#8217;, &#8216;author&#8217;]; 否则安全原因无法正常存储</li>
+<li>视图中实现添加表单 &lt;form action=&#8221;books&#8221; method=&#8221;POST&#8221;&gt;</li>
+</ul>
+<p>&nbsp;</p>
+<p>表单修改数据流程：</p>
+<ul>
+<li>添加新路由 Route::get(&#8216;books/{book}/edit&#8217;, &#8216;BooksController@edit&#8217;); 用于进入编辑页面</li>
+<li>添加新路由 Route::patch(&#8216;books/{book}&#8217;, &#8216;BooksController@update&#8217;); 用于提交编辑结果</li>
+<li>实现编辑页面的控制器 update() 方法
+<ul>
+<li>use  App\Models\Book;</li>
+<li>传入至少两个参数  Request $request, Book $book</li>
+<li>$book -&gt; update($request -&gt; all());</li>
+<li>return back();</li>
+</ul>
+</li>
+<li>实现视图
+<ul>
+<li>表单 &lt;form method=&#8221;POST&#8221; action=&#8221;books/{ $book-&gt;isbn }&#8221;&gt;</li>
+<li>表单中加入 {{ method_field(&#8216;PATCH&#8217;) }}</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;"><span style="color: #000000;">表单验证</span> Validation</span></p>
+<p><a href="javascript:if(confirm(%27https://scotch.io/tutorials/laravel-form-validation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://scotch.io/tutorials/laravel-form-validation%27" tppabs="https://scotch.io/tutorials/laravel-form-validation" target="_blank" rel="noopener">https://scotch.io/tutorials/laravel-form-validation</a></p>
+<ul>
+<li>控制器内
+<ul>
+<li>设置规则 $rules = array();</li>
+<li>$validator = Validator::make(Input::all(), $rules);</li>
+<li>验证失败 if ($validator-&gt;fails()) ，记录错误</li>
+<li>验证成功，存储数据</li>
+</ul>
+</li>
+<li>视图内
+<ul>
+<li>显示错误信息</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>身份验证 <span style="color: #ff0000;">Auth</span></p>
+<p>5.2 版本重新加入了身份验证脚手架，可在新项目中快速生成基础验证模块</p>
+<pre class="lang:sh decode:true">php artisan make:auth
+php artisan migrate
+</pre>
+<p>&nbsp;</p>
+<h2>脚手架</h2>
+<p>使用第三方插件 <a href="javascript:if(confirm(%27https://github.com/InfyOmLabs/laravel-generator  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/InfyOmLabs/laravel-generator%27" tppabs="https://github.com/InfyOmLabs/laravel-generator" target="_blank" rel="noopener">https://github.com/InfyOmLabs/laravel-generator</a></p>
+<p>快速生成标准 CURD 页面</p>
+<p>&nbsp;</p>
+<h2>结论</h2>
+<p><img loading="lazy" class="alignnone size-full wp-image-356" src="laravel-base-1.jpg" tppabs="http://localhost/xuepub/wp-content/uploads/2016/05/laravel-base-1.jpg" alt="laravel-base" width="700" height="426" /></p>
+<p>进阶内容参见官方文档</p>
+<ul>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Billing</li>
+<li>Cache</li>
+<li>Encryption</li>
+<li>Middleware</li>
+<li>Events</li>
+<li>Pagination</li>
+<li>Queues</li>
+<li>Session</li>
+<li>Testing</li>
+</ul>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-247 post type-post status-publish format-standard hentry category-back-end category-dev tag-agile">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-32.htm" tppabs="http://localhost/xuepub/2016/05/07/%e6%95%8f%e6%8d%b7%e5%bc%80%e5%8f%91%e7%ae%80%e8%bf%b0/" title="敏捷开发简述">敏捷开发简述</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-07"><i class="materialize-icon-calendar"></i>on 2016年5月7日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2>敏捷价值和原则</h2>
+<ul>
+<li>敏捷 4 宣言
+<ul>
+<li><span style="color: #ff6600;">个体和互动</span> 高于 流程和工具</li>
+<li><span style="color: #ff6600;">工作的软件</span> 高于 详尽的文档</li>
+<li><span style="color: #ff6600;">客户合作</span> 高于 合同谈判</li>
+<li><span style="color: #ff6600;">响应变化</span> 高于 遵循计划</li>
+</ul>
+</li>
+<li>敏捷 12 原则（交付、沟通、执行、提升）</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Scrum 方法</h2>
+<ul>
+<li>最流行的敏捷方法论，<a href="javascript:if(confirm(%27http://www.scrum.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.scrum.org/%27" tppabs="http://www.scrum.org/" target="_blank" rel="noopener">http://www.scrum.org/</a></li>
+<li>团队
+<ul>
+<li>团队角色
+<ul>
+<li>Scrum Master，指导项目方向</li>
+<li>Product Owner，帮助团队理解软件价值</li>
+<li>Team Member，每个人都拥有项目</li>
+</ul>
+</li>
+<li>自组织</li>
+<li>集体承诺</li>
+</ul>
+</li>
+<li>迭代周期，Sprint
+<ul>
+<li>计划</li>
+<li>每日会议，Daily Scrum</li>
+<li>Visibility-Inspection-Adaptation Cycle</li>
+<li>回顾</li>
+</ul>
+</li>
+<li>工具
+<ul>
+<li>用户故事，帮助建立用户可用的需求</li>
+<li>故事点，评估开发难度</li>
+<li>燃尽图</li>
+<li>任务板</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>XP &#8211; 极限编程、拥抱变化</h2>
+<ul>
+<li>著名的敏捷开发实践
+<ul>
+<li>XP 价值：沟通、简化、反馈、勇气、尊重</li>
+<li>XP 原则：人文精神、经济、互利、自相似、改进、多样性、反思、流、机会、冗余、失败、质量、接受职责、缓步</li>
+</ul>
+</li>
+<li>编程方式
+<ul>
+<li>结对</li>
+<li>测试优先</li>
+<li>持续集成</li>
+<li>重构</li>
+</ul>
+</li>
+<li>计划
+<ul>
+<li>weekly cycle</li>
+<li>quarterly cycle</li>
+<li>用户故事</li>
+</ul>
+</li>
+<li>团队
+<ul>
+<li>协作</li>
+<li>知识、技能交流</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>精益</h2>
+<ul>
+<li>精益是一种心态，一种关于世界运行的心智模型</li>
+<li>精益价值
+<ul>
+<li>消除损耗，从项目删除无价值工作</li>
+<li>增进学习，反馈提升</li>
+<li>尽晚决定</li>
+<li>尽快交付</li>
+<li>授权团队</li>
+<li>完整构建</li>
+<li>全盘考虑</li>
+</ul>
+</li>
+<li>工具
+<ul>
+<li>价值流图</li>
+<li>(work in progress) WIP 图</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>看板</h2>
+<ul>
+<li>一种流程改进方法</li>
+<li>基本原则
+<ul>
+<li>在当下开始做</li>
+<li>同意追赶增量、进化的改变</li>
+<li>首先，尊重当前的角色、职责和职位</li>
+</ul>
+</li>
+<li>核心实践
+<ul>
+<li>形象化</li>
+<li>限制 WIP</li>
+<li>管理流</li>
+<li>让流程政策明确</li>
+<li>提升反馈循环</li>
+<li>协作改善，实验发展（使用模型 / 科学方法）</li>
+</ul>
+</li>
+<li>工具
+<ul>
+<li>Kanban Board</li>
+<li>CFD (cumulative flow diagram) 积累流图</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>
+
+    <!-- post content wrapper -->
+    <article class="post-233 post type-post status-publish format-standard hentry category-back-end category-dev">
+
+        
+        <!-- the post title -->
+        <h2 class="post-title">
+            
+                <a href="index-38.htm" tppabs="http://localhost/xuepub/2016/05/02/http-rest-%e7%ae%80%e8%bf%b0/" title="HTTP REST 简述">HTTP REST 简述</a>
+
+                    </h2>
+
+                <div class="mythemes-top-meta meta">
+
+            <!-- date -->
+            
+            <time datetime="2016-05-02"><i class="materialize-icon-calendar"></i>on 2016年5月2日</time>
+
+            <div class="clear"></div>
+
+            <!-- categories -->
+            <ul class="post-categories">
+	<li><a href="index-2.htm" tppabs="http://localhost/xuepub/category/back-end/" rel="category tag">后端</a></li>
+	<li><a href="index-3.htm" tppabs="http://localhost/xuepub/category/back-end/dev/" rel="category tag">开发</a></li></ul>
+            <!-- author -->
+                        <a class="author waves-effect waves-dark grey lighten-4" href="index-8.htm" tppabs="http://localhost/xuepub/author/szzz/" title="written by szzz">
+                <i class="materialize-icon-user-1"></i>by szzz            </a>
+
+            <!-- comments -->
+                    </div><!-- .mythemes-top-meta -->
+
+        <!-- the post content -->
+        <div class="post-content">
+
+            <h2><del></del>HTTP 协议</h2>
+<p>目前为 HTTP 1.1</p>
+<p>用户要访问某个资源，通过浏览器发送请求 Request，指向了 URL / URI 对应的服务器</p>
+<p>服务器接收到请求后，返回给用户一个响应 Response</p>
+<p>如果访问成功，通常响应会包含页面内容，如果不成功，可能会看到 404 页面</p>
+<p>&nbsp;</p>
+<p>HTTP 协议是无状态的</p>
+<p>&nbsp;</p>
+<p>请求类型：OPTIONS、GET、HEAD、POST、PUT、DELETE、TRACE、CONNECT</p>
+<p>响应状态码：1xx（消息）、2xx（成功）、3xx（重定向）、4xx（客户端错误）、5xx（服务器错误）</p>
+<p>&nbsp;</p>
+<h2>REST</h2>
+<p>REST 表述性状态转移，是当前最流行的互联网架构之一，目的是设计“完美 URL”，降低客户端和服务端的复杂度</p>
+<p>通过设计 URL 来统一资源的表述，规定请求类型：</p>
+<ul>
+<li>POST /uri 增加资源</li>
+<li>GET /uri/{id} 查找资源</li>
+<li>PUT /uri/{id} 更新资源</li>
+<li>DELETE /uri/{id}  删除资源</li>
+<li>（可选）PATCH</li>
+</ul>
+<p>资源既可以是 HTML（提供内容），也可以是 JSON 数据（提供 APIs、Web Services）</p>
+<p>可构造不同层次的 Web 系统</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            
+            <div class="clearfix"></div>
+        </div>
+    </article>            <!-- the pagination content -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="pagination aligncenter">
+
+                        <!-- the pagination items -->
+                        <nav class="mythemes-nav-inline">
+                            <ul class='page-numbers'>
+	<li><span aria-current="page" class="page-numbers current">1</span></li>
+	<li><a class="page-numbers" href="index-39.htm" tppabs="http://localhost/xuepub/category/back-end/dev/page/2/">2</a></li>
+	<li><a class="next page-numbers" href="index-39.htm" tppabs="http://localhost/xuepub/category/back-end/dev/page/2/">Next <i class="materialize-icon-right-open-1"></i></a></li>
+</ul>
+                        </nav>
+                        
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<aside class="col s12 m12 l3 mythemes-sidebar sidebar-to-right"><div id="block-2" class="widget widget_block widget_search"><form role="search" method="get" action="http://localhost/xuepub/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">搜索</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder=""  required /><button type="submit" class="wp-block-search__button ">搜索</button></div></form></div><div id="block-8" class="widget widget_block widget_archive"><ul class=" wp-block-archives-list wp-block-archives">	<li><a href="index-15.htm" tppabs="http://localhost/xuepub/2017/10/">2017年10月</a></li>
+	<li><a href="index-16.htm" tppabs="http://localhost/xuepub/2017/01/">2017年1月</a></li>
+	<li><a href="index-17.htm" tppabs="http://localhost/xuepub/2016/06/">2016年6月</a></li>
+	<li><a href="index-18.htm" tppabs="http://localhost/xuepub/2016/05/">2016年5月</a></li>
+	<li><a href="index-19.htm" tppabs="http://localhost/xuepub/2016/04/">2016年4月</a></li>
+	<li><a href="index-20.htm" tppabs="http://localhost/xuepub/2016/03/">2016年3月</a></li>
+	<li><a href="index-21.htm" tppabs="http://localhost/xuepub/2016/01/">2016年1月</a></li>
+	<li><a href="index-22.htm" tppabs="http://localhost/xuepub/2015/07/">2015年7月</a></li>
+</ul></div></aside>
+            </div>
+        </div><!-- .container -->
+    </div><!-- .content -->
+
+
+        <footer>
+                                <!-- footer sidebars -->
+                    <aside class="mythemes-footer-sidebars">
+
+                        <!-- the sidebars container ( align to center ) -->
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- first footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                    <div id="block-5" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div><div id="block-6" class="widget widget_block">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+</div>                                </div>
+
+                                <!-- second footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                                                    </div>
+
+                                <!-- third footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                                                    </div>
+
+                                <!-- fourth footer sidebar -->
+                                <div class="col s12 m6 l3">
+                                                                    </div>
+
+                            </div>
+                        </div><!-- .container -->
+                    </aside><!-- .mythemes-footer-sidebars -->
+            
+            <!-- dark mask social and copyright wrapper -->
+            <div class="mythemes-dark-mask">
+
+                
+                <!-- copyright -->
+                <div class="mythemes-copyright">
+
+                    <!-- copyright container ( align to center ) -->
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col s12">
+                                <p>
+
+                                    
+                                    <span class="copyright">Copyright &copy; 2021 学吧. Powered by <a href="javascript:if(confirm(%27http://wordpress.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wordpress.org/%27" tppabs="http://wordpress.org/">WordPress</a>.</span>
+
+                                    
+                                    <span>Designed by <a href="javascript:if(confirm(%27http://mythem.es/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://mythem.es/%27" tppabs="http://mythem.es/" target="_blank" title="myThem.es" class="mythemes">myThem.es</a>.</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div><!-- .container -->
+                </div><!-- .mythemes-copyright -->
+            </div>
+
+        </footer>
+
+        <script type='text/javascript' src="imagesloaded.min.js-ver=4.1.4" tppabs="http://localhost/xuepub/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id='imagesloaded-js'></script>
+<script type='text/javascript' src="masonry.min.js-ver=4.2.2" tppabs="http://localhost/xuepub/wp-includes/js/masonry.min.js?ver=4.2.2" id='masonry-js'></script>
+<script type='text/javascript' src="functions.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/functions.js?ver=0.0.21" id='mythemes-functions-js'></script>
+<script type='text/javascript' src="materialize.min.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/materialize.min.js?ver=0.0.21" id='mythemes-materialize-js'></script>
+<script type='text/javascript' src="jquery.prettyPhoto.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.js?ver=0.0.21" id='mythemes-pretty-photo-js'></script>
+<script type='text/javascript' src="jquery.prettyPhoto.settings.js-ver=0.0.21" tppabs="http://localhost/xuepub/wp-content/themes/materialize/media/_frontend/js/jquery.prettyPhoto.settings.js?ver=0.0.21" id='mythemes-pretty-photo-settings-js'></script>
+<script type='text/javascript' src="wp-embed.min.js-ver=5.8.2" tppabs="http://localhost/xuepub/wp-includes/js/wp-embed.min.js?ver=5.8.2" id='wp-embed-js'></script>
+<script type='text/javascript' src="jquery.datatables.min.js-ver=1.14" tppabs="http://localhost/xuepub/wp-content/plugins/tablepress/js/jquery.datatables.min.js?ver=1.14" id='tablepress-datatables-js'></script>
+<script type="text/javascript">
+jQuery(function($){
+var DataTables_language={};
+DataTables_language["zh_CN"]={"emptyTable":"表中数据为空","info":"显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项","infoEmpty":"显示第 0 至 0 项结果，共 0 项","infoFiltered":"(由 _MAX_ 项结果过滤)","infoPostFix":"","lengthMenu":"显示 _MENU_ 项结果","loadingRecords":"载入中...","processing":"处理中...","search":"搜索:","zeroRecords":"没有匹配结果","paginate": {"first":"首页","previous":"上页","next":"下页","last":"末页"},"aria": {"sortAscending":": 以升序排列此列","sortDescending":": 以降序排列此列"},"decimal":"","thousands":","};
+$('#tablepress-1').dataTable({"language":DataTables_language["zh_CN"],"order":[],"orderClasses":false,"stripeClasses":["even","odd"],"pagingType":"simple"});
+});
+</script>
+    </body>
+</html>
